@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional - Desenvolvedor">
+    <meta name="author" content="Seu Nome">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfólio - Desenvolvedor">
+    <meta property="og:description" content="Portfólio profissional com projetos e integração de IA">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Portfólio - Desenvolvedor">
+    
+    <title>LaPlace</title>
+    <link rel="shortcut icon" href="favicon.icon" type="image/x-icon"> <!-- colocar algum Favicon aqui-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones de tecnologia -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>   
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Navegação principal">
+            <div class="nav-container">
+                <div class="header-actions">
+                    <button class="header-icon language-toggle" aria-label="Alterar idioma" title="Alterar idioma">
+                        <span class="language-symbol">Aあ</span>
+                    </button>
+                </div>
+                <a id="logo" href="#home" class="logo" aria-label="Início">
+                    <span class="logo-text">LaPlace</span>
+                </a>
+                
+                <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" role="menubar">
+                    <!-- analisar op para menu se precisar colocar mais -->
+                    <li role="none"><a href="#home" role="menuitem">Início</a></li>
+                    <li role="none"><a href="#login" role="menuitem">Login</a></li>
+                    <li role="none"><a href="#about" role="menuitem">Sobre</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Contato</a></li>
+                    <li role="none">
+                        <button class="theme-toggle" aria-label="Alternar tema" title="Alternar entre modo claro e escuro">
+                            <span class="theme-icon theme-icon--sun">☀️</span>
+                            <span class="theme-icon theme-icon--moon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">
+                        LaPlace, orquestrador <span class="highlight">de IAs</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                      Tudo em um so lugar, o melhor da tecnologia moderna!
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">Participar</a>
+                        <a href="#contact" class="btn btn-secondary">Chat</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" aria-labelledby="about-title">
+            <!-- Ícones de tecnologia animados no fundo -->
+            <div class="tech-icons-background">
+                <i class="fab fa-python tech-icon tech-icon--python" data-tech="python"></i>
+                <i class="fab fa-js-square tech-icon tech-icon--javascript" data-tech="javascript"></i>
+                <i class="fab fa-react tech-icon tech-icon--react" data-tech="react"></i>
+                <i class="fas fa-microchip tech-icon tech-icon--assembly" data-tech="assembly"></i>
+                <i class="fab fa-html5 tech-icon tech-icon--html" data-tech="html"></i>
+                <i class="fab fa-css3-alt tech-icon tech-icon--css" data-tech="css"></i>
+                <i class="fab fa-node-js tech-icon tech-icon--node" data-tech="node"></i>
+                <i class="fab fa-git-alt tech-icon tech-icon--git" data-tech="git"></i>
+            </div>
+            
+            <div class="container">
+                <h2 id="about-title" class="section-title">Sobre o Projeto</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Projeto open source que unifica diversas inteligências artificiais em uma única plataforma.
+                            O sistema utiliza uma IA central que analisa a tarefa específica do usuário, identifica a melhor IA para executá-la e encaminha a requisição.
+                            Em seguida, retorna a resposta final de forma integrada e eficiente.
+                        </p>
+                        <p>
+                            A proposta do projeto é trazer mais praticidade ao unificar diversas IAs em um único ponto, oferecendo acesso 100% gratuito.
+                            Disponibilizamos extensões para navegadores, que facilitam o uso no dia a dia, além de extensões para o VS Code, integrando a ferramenta diretamente no seu ambiente de desenvolvimento.
+                        </p>
+                    </div>
+                    <divclass="skills">
+                        <h3 class="skills-title">Tecnologias</h3>
+                        <ul class="skills-list">
+                            <li id="mistral" class="skill-item"><a class="skill-link" href="./bio.html?mode=mistral">Mistral 7B</a></li>
+                            <li id="stable" class="skill-item"><a class="skill-link" href="./bio.html?mode=stable">Stable Diffusion XL</a></li>
+                            <li id="whisper" class="skill-item"><a class="skill-link" href="./bio.html?mode=whisper">Whisper</a></li>
+                            <li id="codellama" class="skill-item"><a class="skill-link" href="./bio.html?mode=codellama">CodeLlama</a></li>
+                            <li id="falcon" class="skill-item"><a class="skill-link" href="./bio.html?mode=falcon">Falcon 40B</a></li>
+                            <li id="bark" class="skill-item"><a class="skill-link" href="./bio.html?mode=bark">Bark</a></li>
+                            <li id="llama" class="skill-item"><a class="skill-link" href="./bio.html?mode=llama">Llama 3</a></li>
+                            <li id="autogpt" class="skill-item"><a class="skill-link" href="./bio.html?mode=autogpt">AutoGPT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- participe -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title"> saiba mais sobre o projeto</h2>
+                <p class="contact-description">Projeto criado para simplificar o acesso direto as IAs,<br> para que o usuário final tenha tudo em um so lugar de forma fácil e rápido.</p>
+                <h2 id="contact-title" class="section-title">Contato</h2>
+                <div class="contact-content">
+                    <p class="contact-description">
+                        Ei! Desenvolvedor você é bem vindo a participar do projeto.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:zaluski.developer@gmail.com" class="contact-link" aria-label="Enviar email">
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span><!--criar um email para o projeto-->
+                            Email
+                        </a>
+                        <a href="https://github.com/DiegoZaluski" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil no GitHub">
+                            <span class="contact-icon"><i class="fab fa-github"></i></span>
+                            GitHub
+                        </a>
+                        <a href="#" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn"> <!--criar perfil no instagram para o projeto-->
+                            <span class="contact-icon"><i class="fab fa-instagram"></i></span>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer-text">
+                © 2025 Pojeto maestro LaPlace!
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</body>
+</html>
