@@ -9,51 +9,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const techIcons = document.querySelectorAll('.tech-icon');
 //---------------------------------------------------------------------------> system theme dark/light
 
-// <----------------> initialize theme with system preference support
+// ----------------> initialize theme with system preference support
     function initTheme() {
-// <----------------> check system preference
+// ----------------> check system preference
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
         
-// <----------------> function to apply theme
+// ----------------> function to apply theme
         const applyTheme = (theme) => {
             document.documentElement.setAttribute('data-theme', theme);
             updateThemeToggleAriaLabel(theme);
             localStorage.setItem('portfolio-theme', theme);
         };
 
-// <----------------> check if there is a saved theme
+// ----------------> check if there is a saved theme
         const savedTheme = localStorage.getItem('portfolio-theme');
         
-// <----------------> if no saved theme, use system preference
-        if (!savedTheme) {
+// ----------------> if no saved theme, use system preference
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        } else {
             const systemTheme = prefersDark.matches ? 'dark' : 'light';
             applyTheme(systemTheme);
-        } else {
-            applyTheme(savedTheme);
         }
 
-// <----------------> listener for system theme changes
+// ----------------> listener for system theme changes
         const handleSystemThemeChange = (e) => {
-// <----------------> apply only if user has no saved preference
+// ----------------> apply only if user has no saved preference
             if (!localStorage.getItem('portfolio-theme')) {
                 const newTheme = e.matches ? 'dark' : 'light';
                 applyTheme(newTheme);
             }
         };
 
-// <----------------> add listener for system theme changes
+// ----------------> add listener for system theme changes
         prefersDark.addEventListener('change', handleSystemThemeChange);
 
-// <----------------> return a function to clean up the listener when no longer needed
+// ----------------> return a function to clean up the listener when no longer needed
         return () => {
-            prefersDark.removeEventListener('change', handleSystemThemeChange);
+            prefersDark.removeEventListener('change', handleSystemThemeChange); // stop here 
         };
     }
     
-// <----------------> initialize theme
+// ----------------> initialize theme
     initTheme();
     
-// <----------------> toggle theme
+// ----------------> toggle theme
     function toggleTheme() {
         const currentTheme = document.documentElement.getAttribute('data-theme'); 
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-// <----------------> update aria-label of button
+// ----------------> update aria-label of button
     function updateThemeToggleAriaLabel(theme) {
         if (themeToggle) {
             const label = theme === 'dark' 
@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-// <----------------> event listener for toggle
+// ----------------> event listener for toggle
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
-// <----------------> support for keyboard
+// ----------------> support for keyboard
         themeToggle.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -93,41 +93,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 // -------------------------------------------------------------------> parallax
     
-// <----------------> variables for parallax control
+// ----------------> variables for parallax control
     let mouseX = 0;
     let mouseY = 0;
     let isInAboutSection = false;
     
-// <----------------> function to apply parallax effect to icons
+// ----------------> function to apply parallax effect to icons
     function applyParallaxEffect(mouseX, mouseY, sectionRect) {
         techIcons.forEach((icon, index) => {
-// <----------------> calculate relative mouse position in section (0 to 1)
+// ----------------> calculate relative mouse position in section (0 to 1)
             const relativeX = (mouseX - sectionRect.left) / sectionRect.width;
             const relativeY = (mouseY - sectionRect.top) / sectionRect.height;
             
-// <----------------> different intensities for each icon (more natural)
+// ----------------> different intensities for each icon (more natural)
             const intensityX = (index % 3 + 1) * 1.5; // Increased from 0.5 to 1.5
             const intensityY = (index % 2 + 1) * 0.9; // Increased from 0.3 to 0.9
             
-// <----------------> calculate displacement with more pronounced movement
+// ----------------> calculate displacement with more pronounced movement
             const moveX = (relativeX - 0.5) * intensityX * 40; // Increased from 20 to 40
             const moveY = (relativeY - 0.5) * intensityY * 30; // Aumentado de 20 para 30
             
-// <----------------> apply transformation with additional rotation based on movement
+// ----------------> apply transformation with additional rotation based on movement
             const rotateX = (relativeY - 0.5) * 10; // Inclinação no eixo X
             const rotateY = (relativeX - 0.5) * -10; // Inclinação no eixo Y (negativo para efeito 3D)
             
-// <----------------> apply combined transformations (parallax + 3D rotation)
+// ----------------> apply combined transformations (parallax + 3D rotation)
             icon.style.transform = `
                 translate3d(${moveX}px, ${moveY}px, 0)
                 rotateX(${rotateX}deg)
                 rotateY(${rotateY}deg)
             `;
             
-// <----------------> smooth transition
+// ----------------> smooth transition
             icon.style.transition = 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
             
-// <----------------> depth effect with scale based on distance from center
+// ----------------> depth effect with scale based on distance from center
             const centerX = sectionRect.width / 2;
             const centerY = sectionRect.height / 2;
             const distanceX = Math.abs(mouseX - (sectionRect.left + centerX));
@@ -138,47 +138,47 @@ document.addEventListener('DOMContentLoaded', function() {
             
             icon.style.transform += ` scale(${scale})`;
             
-// <----------------> effect of brightness based on mouse position
+// ----------------> effect of brightness based on mouse position
             const brightness = 1 + (1 - Math.min(distance / maxDistance, 1)) * 0.5;
             icon.style.filter = `drop-shadow(0 2px 4px rgba(0,0,0,0.3)) brightness(${brightness})`;
         });
     }
     
-// <----------------> function to reset icon positions
+// ----------------> function to reset icon positions
     function resetIconsPosition() {
         techIcons.forEach(icon => {
-// <----------------> reset transform, keep CSS animation active
+// ----------------> reset transform, keep CSS animation active
             icon.style.transform = 'translate(0px, 0px)';
             icon.style.transition = 'transform 0.3s ease-out';
         });
     }
     
-// <----------------> debug: verify if elements were found
+// ----------------> debug: verify if elements were found
     console.log('About Section:', aboutSection);
     console.log('Tech Icons:', techIcons.length);
     
-// <----------------> event listener for mouse movement in about section
+// ----------------> event listener for mouse movement in about section
     if (aboutSection && techIcons.length > 0) {
-// <----------------> mouse enters section
+// ----------------> mouse enters section
         aboutSection.addEventListener('mouseenter', function() {
             isInAboutSection = true;
         });
         
-// <----------------> mouse leaves section
+// ----------------> mouse leaves section
         aboutSection.addEventListener('mouseleave', function() {
             isInAboutSection = false;
             resetIconsPosition();
         });
         
-// <----------------> optimization: variables for performance control
+// ----------------> optimization: variables for performance control
     let lastTime = 0;
     const throttleDelay = 16; // ~60fps
     
-// <----------------> mouse movement in section
+// ----------------> mouse movement in section
     aboutSection.addEventListener('mousemove', function(e) {
         if (!isInAboutSection) return;
         
-// <----------------> throttling for better performance
+// ----------------> throttling for better performance
         const now = Date.now();
         if (now - lastTime < throttleDelay) return;
         lastTime = now;
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const sectionRect = aboutSection.getBoundingClientRect();
         
-// <----------------> apply parallax effect using requestAnimationFrame for better performance
+// ----------------> apply parallax effect using requestAnimationFrame for better performance
         if (!window.requestId) {
             window.requestId = requestAnimationFrame(() => {
                 applyParallaxEffect(mouseX, mouseY, sectionRect);
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-// <----------------> touch support
+// ----------------> touch support
         aboutSection.addEventListener('touchmove', function(e) {
             if (!isInAboutSection || !e.touches[0]) return;
             
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-// <----------------> reset icons position
+// ----------------> reset icons position
         aboutSection.addEventListener('touchend', function() {
             resetIconsPosition();
         });
@@ -223,11 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
         navToggle.addEventListener('click', function() {
             const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
             
-// <----------------> toggle menu
+// ----------------> toggle menu
             navMenu.classList.toggle('active');
             navToggle.setAttribute('aria-expanded', !isExpanded);
             
-// <----------------> hamburger animation
+// ----------------> hamburger animation
             const hamburgers = navToggle.querySelectorAll('.hamburger');
             hamburgers.forEach((line, index) => {
                 if (navMenu.classList.contains('active')) {
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-// <----------------> close menu on click link
+// ----------------> close menu on click link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-// <----------------> close menu on click outside
+// ----------------> close menu on click outside
         document.addEventListener('click', function(e) {
             if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -283,9 +283,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const navLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
 
             if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
- // <----------------> update active nav link
+ // ----------------> update active nav link
                 navLinks.forEach(link => link.classList.remove('active'));
- // <----------------> update active nav link
+ // ----------------> update active nav link
                 if (navLink) navLink.classList.add('active');
             }
         });

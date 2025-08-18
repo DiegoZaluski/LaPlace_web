@@ -1,4 +1,3 @@
-
 // ----------------> IAs
 const urlParams = new URLSearchParams(window.location.search);// estudar mais esta parte
 const mode = urlParams.get('mode');
