@@ -13,7 +13,7 @@ class I18n {
         // 3. Idioma do navegador (navigator.language)
         // 4. Padrão 'pt' (português)
         this.locale = localStorage.getItem('userLanguage') || 
-            (navigator.languages && navigator.languages[0]) ||
+            (navigator.languages && navigator.languages[0]) || // usar desta for ( &&) garante que não de erros e iterrompa o codigo em navegadores antigos 
             navigator.language || 
             'pt';
             
@@ -28,7 +28,7 @@ class I18n {
      * Carrega as traduções do arquivo JSON correspondente ao idioma atual
      * @async
      */
-    async loadTranslations() {
+    async loadTranslations() {// para pegar os arquivos json de tradução
         try {
             // Tenta carregar o arquivo de tradução do idioma atual
             const response = await fetch(`/locales/${this.locale}.json`);
@@ -49,7 +49,7 @@ class I18n {
             // Se o idioma principal falhar, tenta carregar o fallback
             if (this.locale !== this.fallbackLocale) {
                 this.locale = this.fallbackLocale;
-                this.loadTranslations();
+                this.loadTranslations();// modifica o o local de busca e tenta com o da fallbak  o padrao
             }
         }
     }
@@ -60,7 +60,8 @@ class I18n {
      * @param {Object} [params={}] - Parâmetros para substituição na string de tradução
      * @returns {string} Texto traduzido
      */
-    t(key, params = {}) {
+
+    t(key, params = {}) { // retorna a este função para entender melhor ➕➕➕
         // Divide a chave por pontos para navegar em objetos aninhados
         // Exemplo: 'user.profile.name' -> ['user', 'profile', 'name']
         let translation = key.split('.').reduce((obj, k) => 
@@ -75,7 +76,7 @@ class I18n {
         // Substitui os parâmetros na string de tradução
         // Exemplo: t('welcome', {name: 'João'}) substitui 'Olá, {{name}}!' por 'Olá, João!'
         Object.keys(params).forEach(param => {
-            translation = translation.replace(new RegExp(`{{${param}}}`, 'g'), params[param]);
+            translation = translation.replace(new RegExp(`{{${param}}}`, 'g'), params[param]);// emtender esta parte melhor o RegExp➕➕➕
         });
 
         return translation;
@@ -102,8 +103,8 @@ class I18n {
     updatePage() {
         // Encontra todos os elementos com o atributo data-i18n
         document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            const translation = this.t(key);
+            const key = element.getAttribute('data-i18n');// adiciona o atribute data-i18n elemento dom 
+            const translation = this.t(key);// retorna a tradução da chave
             
             // Atualiza o elemento de acordo com seu tipo
             if (element.placeholder !== undefined) {
@@ -125,7 +126,44 @@ class I18n {
             });
         });
     }
-}
+    // formatação de datas  e números 
+    formatDate(data,options={}) {
+        if (typeof data === 'string') {
+            data = new Date(data); // transforma a string em Data
+        }
+        if (!(data instanceof Date) || isNaN(data)) {
+            console.warn('Formato de data inválido'); // avisa um erro não critíco, não interrompe o código
+            return String(data);// retorna a data como string     
+        }
+
+        try {
+            return new Intl.DateTimeFormat  
+            (this.locale, options).format(data);
+        } catch (Err) {
+            console.error('Err',Err);
+            return data.toLocaleString();// retorna a data string mas não formatada
+        }
+    };
+
+    formatNumber(number, options={}) {//para formatar números
+        // Converte o valor para número, retornando NaN se não for possível
+        const num = Number(number);
+        if (isNaN(num)) {
+            console.warn('Valor numérico inválido');
+            return String(number);// Retorna o valor original como string em caso de falha na formatação
+        }
+
+        try {
+            return new Intl.NumberFormat
+            (this.locale, options).format(number);
+        } catch (Err) {
+            console.error('Erro ao formatar número',Err);
+            return String(number);// tambem retorna em string
+        }
+    };
+
+
+}// estudar mais a fundo este codigo amanhã rescrevendo partes dele ➕➕➕
 
 // Cria uma instância global do i18n
 window.i18n = new I18n();
