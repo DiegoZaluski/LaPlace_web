@@ -75,7 +75,7 @@
     --spacing-sm: 0.5rem;  /* usado 5x */
     --spacing-md: 1rem;  /* usado 8x */
     --spacing-lg: 1.5rem;  /* usado 6x */
-    --spacing-xl: 2rem;  /* usado 4x */
+    --spacing-xl: 1rem;  /* usado 4x */
     --spacing-2xl: 3rem;  /* usado 3x */
     --spacing-3xl: 4rem;  /* usado 2x */
     
@@ -157,6 +157,7 @@ body {
 }
 
 .nav-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -173,14 +174,23 @@ body {
     font-weight: 700;
     font-size: var(--font-size-xl);
     transition: color var(--transition-fast);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 /* Header Actions */
-.header-actions {
+.language-dropdown {
+    outline: 1px solid var(--accent-hover);
+    border-radius: 50%;
+    position: absolute;
+    top: 1.5vh;
+    right: 5vw;
     display: flex;
+    flex-direction:column;
     align-items: center;
-    gap: 12px;
-    margin-right: 12px;
-    margin-left: -5px; 
+    gap: 10px;
+    width: 45px;
+    height: 45px;
 }
 
 .header-icon {
@@ -210,6 +220,31 @@ body {
 .header-icon:focus {
     outline: none !important;
     box-shadow: none;
+}
+
+.language-buttons {
+ display: none;
+
+}
+.languageButtons-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: var(--text-color-primary);
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.5;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px; 
+    height: 45px; 
+}
+.languageButtons-active:hover {
+    outline: 1px solid var(--accent-hover)
 }
 
 /* ---------------------------> Language Symbol */
@@ -322,6 +357,8 @@ body {
     list-style: none;
     gap: var(--spacing-xl);
     align-items: center;
+    position: absolute;
+    left: 1vw;
 }
 
 .nav-menu a {
@@ -942,7 +979,7 @@ section {
 /* ---------------------------------------------> Responsividade*/
 
 /* Tablets */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .nav-toggle {
         display: flex;
     }

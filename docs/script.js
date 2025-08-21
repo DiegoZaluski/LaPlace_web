@@ -415,3 +415,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Portfolio JavaScript carregado com sucesso! 🚀');
 });
+// -----------------------> language toggle
+const symbolToggle = document.querySelector('.header-icon');
+const languageButtons = Array.from(document.getElementsByClassName('language-buttons'));
+function handleClickButtonLanguage(list = []) {
+    if (!symbolToggle  || !languageButtons) return;
+
+    list.forEach( b => {
+        b.classList.toggle('languageButtons-active');
+    });
+}
+symbolToggle.addEventListener('click', () => handleClickButtonLanguage(languageButtons));

@@ -30,10 +30,21 @@
     <header class="header" role="banner">
         <nav class="nav" role="navigation" aria-label="Navegação principal">
             <div class="nav-container">
-                <div class="header-actions">
+                <div class="language-dropdown">
                     <button class="header-icon language-toggle" aria-label="Alterar idioma" title="Alterar idioma">
                         <span class="language-symbol">Aあ</span>
                     </button>
+                    <button class="language-buttons" onclick="i18m.changeLanguage('pt')">PT</button>
+                    <button class="language-buttons" onclick="i18m.changeLanguage('en')">EN</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('es')">ES</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('fr')">FR</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('de')">DE</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('it')">IT</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('ja')">JA</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('zh')">ZH</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('ko')">KO</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('ar')">AR</button>
+                    <button class="language-buttons" onclick="i18n.changeLanguage('hi')">HI</button>
                 </div>
                 <a id="logo" href="#home" class="logo" aria-label="Início">
                     <span class="logo-text">LaPlace</span>
@@ -47,16 +58,16 @@
                 
                 <ul class="nav-menu" role="menubar">
                     <!-- analisar op para menu se precisar colocar mais -->
-                    <li role="none"><a href="#home" role="menuitem">Início</a></li>
-                    <li role="none"><a href="#login" role="menuitem">Login</a></li>
-                    <li role="none"><a href="#about" role="menuitem">Sobre</a></li>
-                    <li role="none"><a href="#contact" role="menuitem">Contato</a></li>
                     <li role="none">
                         <button class="theme-toggle" aria-label="Alternar tema" title="Alternar entre modo claro e escuro">
                             <span class="theme-icon theme-icon--sun">☀️</span>
                             <span class="theme-icon theme-icon--moon">🌙</span>
                         </button>
                     </li>
+                    <li role="none"><a href="#home" role="menuitem" data-i18n="home">Início</a></li>
+                    <li role="none"><a href="#login" role="menuitem" data-i18n="login">Login</a></li>
+                    <li role="none"><a href="#about" role="menuitem" data-i18n="about">Sobre</a></li>
+                    <li role="none"><a href="#contact" role="menuitem" data-i18n="contact">Contato</a></li>
                 </ul>
             </div>
         </nav>
@@ -68,15 +79,15 @@
         <section id="home" class="hero" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="hero-title" class="hero-title">
+                    <h1 id="hero-title" class="hero-title" data-i18n="hero-title">
                         LaPlace, orquestrador <span class="highlight">de IAs</span>
                     </h1>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle" data-i18n="hero-subtitle">
                       Tudo em um so lugar, o melhor da tecnologia moderna!
                     </p>
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">Participar</a>
-                        <a href="#" class="btn btn-secondary">Chat</a>
+                        <a href="#projects" class="btn btn-primary" data-i18n="participate">Participar</a>
+                        <a href="#" class="btn btn-secondary" data-i18n="chat">Chat</a>
                     </div>
                 </div>
             </div>
@@ -97,21 +108,21 @@
             </div>
             
             <div class="container">
-                <h2 id="about-title" class="section-title">Sobre o Projeto</h2>
+                <h2 id="about-title" class="section-title" data-i18n="about-the-project">Sobre o Projeto</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>
+                        <p data-i18n="about-text">
                             Projeto open source que unifica diversas inteligências artificiais em uma única plataforma.
                             O sistema utiliza uma IA central que analisa a tarefa específica do usuário, identifica a melhor IA para executá-la e encaminha a requisição.
                             Em seguida, retorna a resposta final de forma integrada e eficiente.
                         </p>
-                        <p>
+                        <p data-i18n="about-text-2">
                             A proposta do projeto é trazer mais praticidade ao unificar diversas IAs em um único ponto, oferecendo acesso 100% gratuito.
                             Disponibilizamos extensões para navegadores, que facilitam o uso no dia a dia, além de extensões para o VS Code, integrando a ferramenta diretamente no seu ambiente de desenvolvimento.
                         </p>
                     </div>
                     <divclass="skills">
-                        <h3 class="skills-title">Tecnologias</h3>
+                        <h3 class="skills-title" data-i18n="technologies">Tecnologias</h3>
                         <ul class="skills-list">
                             <li id="mistral" class="skill-item"><a class="skill-link" href="./bio.html?mode=mistral">Mistral 7B</a></li>
                             <li id="stable" class="skill-item"><a class="skill-link" href="./bio.html?mode=stable">Stable Diffusion XL</a></li>
@@ -129,11 +140,11 @@
         <!-- participe -->
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container">
-                <h2 id="projects-title" class="section-title"> saiba mais sobre o projeto</h2>
+                <h2 id="projects-title" class="section-title" data-i18n="find-out-more"> saiba mais sobre o projeto</h2>
                 <p class="contact-description">Projeto criado para simplificar o acesso direto as IAs,<br> para que o usuário final tenha tudo em um so lugar de forma fácil e rápido.</p>
-                <h2 id="contact-title" class="section-title">Contato</h2>
+                <h2 id="contact-title" class="section-title" data-i18n="contact">Contato</h2>
                 <div class="contact-content">
-                    <p class="contact-description">
+                    <p class="contact-description" data-i18n="contact-description">
                         Ei! Desenvolvedor você é bem vindo a participar do projeto.
                     </p>
                     <div class="contact-links">
@@ -158,7 +169,7 @@
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <p class="footer-text">
+            <p class="footer-text" data-i18n="footer-text">
                 © 2025 Pojeto maestro LaPlace!
             </p>
         </div>
