@@ -22,6 +22,12 @@ class I18n {
         
         // Carrega as traduções ao inicializar
         this.loadTranslations();
+        // observador do evento storage mudar se não houver chama a novo metodo para mudar o localStorage
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'userLanguage' && e.newValue !== this.locale) { // verifica se esta função realmente esta sendo util na hora de limpar o codigo e rever 
+                this.changeLanguage(e.newValue);
+            }
+        });
     }
 
     /**
@@ -31,7 +37,7 @@ class I18n {
     async loadTranslations() {// para pegar os arquivos json de tradução
         try {
             // Tenta carregar o arquivo de tradução do idioma atual
-            const response = await fetch(`/locales/${this.locale}.json`);
+            const response = await fetch(`../public/locales/${this.locale}/auth.json`);
             
             // Verifica se a resposta foi bem-sucedida (status 200-299)
             if (!response.ok) {
@@ -48,8 +54,15 @@ class I18n {
             
             // Se o idioma principal falhar, tenta carregar o fallback
             if (this.locale !== this.fallbackLocale) {
+
+                const originalLocale = this.locale;
                 this.locale = this.fallbackLocale;
-                this.loadTranslations();// modifica o o local de busca e tenta com o da fallbak  o padrao
+
+                try { // tratamento de fallback
+                    await this.loadTranslations();
+                } finally {
+                    this.locale = originalLocale;   
+                }
             }
         }
     }
@@ -161,7 +174,6 @@ class I18n {
             return String(number);// tambem retorna em string
         }
     };
-
 
 }// estudar mais a fundo este codigo amanhã rescrevendo partes dele ➕➕➕
 

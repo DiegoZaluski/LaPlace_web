@@ -34,17 +34,17 @@
                     <button class="header-icon language-toggle" aria-label="Alterar idioma" title="Alterar idioma">
                         <span class="language-symbol">Aあ</span>
                     </button>
-                    <button class="language-buttons" onclick="i18m.changeLanguage('pt')">PT</button>
-                    <button class="language-buttons" onclick="i18m.changeLanguage('en')">EN</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('es')">ES</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('fr')">FR</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('de')">DE</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('it')">IT</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('ja')">JA</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('zh')">ZH</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('ko')">KO</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('ar')">AR</button>
-                    <button class="language-buttons" onclick="i18n.changeLanguage('hi')">HI</button>
+                    <button class="language-buttons" data-language="pt">PT</button>
+                    <button class="language-buttons" data-language="en">EN</button>
+                    <button class="language-buttons" data-language="es">ES</button>
+                    <button class="language-buttons" data-language="fr">FR</button>
+                    <button class="language-buttons" data-language="de">DE</button>
+                    <button class="language-buttons" data-language="it">IT</button>
+                    <button class="language-buttons" data-language="ja">JA</button>
+                    <button class="language-buttons" data-language="zh">ZH</button>
+                    <button class="language-buttons" data-language="ko">KO</button>
+                    <button class="language-buttons" data-language="ar">AR</button>
+                    <button class="language-buttons" data-language="hi">HI</button>
                 </div>
                 <a id="logo" href="#home" class="logo" aria-label="Início">
                     <span class="logo-text">LaPlace</span>
@@ -176,7 +176,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js" defer></script>
     <script src="i18n.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
