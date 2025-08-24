@@ -43,19 +43,19 @@ fetch('IAs.json')// olá mundo >_<
 
     if (item) {
 // clear container
-        container.innerHTML = ''; 
+        container.innerText = ''; 
 // create paper
         const paper = new Paper(item.title,item.description, item.footer);
         paper.createTitle();
         paper.createText();
         paper.createFooter();
     } else {    
-        container.innerHTML = '<p>modelo não encontrado. página com problemas</p>';
+        container.textContent = '<p>modelo não encontrado. página com problemas</p>';
         }
     })
     .catch(error => {
         console.error('Erro ao carregar dados:', error);
-        container.innerHTML = '<p>Erro ao carregar dados. por favor, tente novamente mais tarde</p>';
+        container.textContent = '<p>Erro ao carregar dados. por favor, tente novamente mais tarde</p>';
     });
 });
 
