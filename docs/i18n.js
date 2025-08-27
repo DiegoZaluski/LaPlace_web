@@ -28,14 +28,15 @@ class I18n {
 
     async loadTranslations() { // get translations from json file
         try {
-            const response = await fetch(`locales/${this.locale}/auth.json`);
+            const response = await fetch(`t.json`);
 // ------------> -----------> -----------> -----------> -----------> -----------> -----------> 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 // ---------> Convert response to JSON and store translations
-            this.translations = await response.json();
-            
+            const objectTranslations = await response.json();
+            this.translations = objectTranslations[this.locale] || objectTranslations[this.fallbackLocale];
+
 // ---------> Update page elements with new translations
             this.updatePage();
         } catch (error) {
