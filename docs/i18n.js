@@ -28,7 +28,8 @@ class I18n {
 
     async loadTranslations() { // get translations from json file
         try {
-            const url = window.location.hostname === 'localhost' ? `public/locales/${this.locale}/auth.json` : `https://raw.githubusercontent.com/DiegoZaluski/VanillaLaPlace/main/docs/public/locales/${this.locale}/auth.json`;
+            const url = window.location.hostname === 'localhost' ? `public/locales/${this.locale}/auth.json` : `https://diegozaluski.github.io/VanillaLaPlace/public/locales/${this.locale}/auth.json
+`;
             const response = await fetch(url);
 // ------------> -----------> -----------> -----------> -----------> -----------> -----------> 
             if (!response.ok) {
