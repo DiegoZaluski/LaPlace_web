@@ -28,9 +28,7 @@ class I18n {
 
     async loadTranslations() { // get translations from json file
         try {
-            const url = window.location.hostname === 'localhost' ? `public/locales/${this.locale}/auth.json` : `https://diegozaluski.github.io/VanillaLaPlace/public/locales/${this.locale}/auth.json
-`;
-            const response = await fetch(url);
+            const response = await fetch(`public/locales/${this.locale}/auth.json`);
 // ------------> -----------> -----------> -----------> -----------> -----------> -----------> 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
