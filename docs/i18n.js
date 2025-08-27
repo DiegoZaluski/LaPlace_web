@@ -28,7 +28,7 @@ class I18n {
 
     async loadTranslations() { // get translations from json file
         try {
-            const response = await fetch(`public/locales/${this.locale}/auth.json`);
+            const response = await fetch(`./public/locales/${this.locale}/auth.json`);
 // ------------> -----------> -----------> -----------> -----------> -----------> -----------> 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
