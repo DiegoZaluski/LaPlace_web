@@ -1,6 +1,5 @@
-# Por que Vanilla JavaScript?
-
 ## Objetivo Deste Documento
+
 O projeto ainda está em seu estágio inicial, mas vou falar um pouco sobre a ideia por trás dele.
 
 O objetivo principal é criar um sistema operacional com um Large Language Model (LLM) integrado. Esse LLM será capaz de controlar requisições de API e gerenciar operações dentro do próprio sistema, permitindo que ele se integre com outros sistemas operacionais ou funcione de forma autônoma e muito mais.
