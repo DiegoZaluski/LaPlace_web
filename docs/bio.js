@@ -36,10 +36,10 @@ class Paper {
 
 // -----------------> call JSON
 document.addEventListener('DOMContentLoaded', () => {
-fetch('IAs.json')// olá mundo >_< 
+fetch('IAs.json')// >_< 
 .then(response => response.json())
 .then(data => {
-    const item = data.find(item => item.id === mode);// para encontar o primeiro elemento que satisfaça a condição
+    const item = data.find(item => item.id === mode);
 
     if (item) {
 // clear container
@@ -50,12 +50,12 @@ fetch('IAs.json')// olá mundo >_<
         paper.createText();
         paper.createFooter();
     } else {    
-        container.textContent = '<p>modelo não encontrado. página com problemas</p>';
+        container.textContent = 'modelo não encontrado. página com problemas';
         }
     })
     .catch(error => {
         console.error('Erro ao carregar dados:', error);
-        container.textContent = '<p>Erro ao carregar dados. por favor, tente novamente mais tarde</p>';
+        container.textContent = 'Erro ao carregar dados. por favor, tente novamente mais tarde';
     });
 });
 

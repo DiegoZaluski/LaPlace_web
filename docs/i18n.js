@@ -28,34 +28,10 @@ class I18n {
 
     async loadTranslations() { // get translations from json file
         try {
-            // Tenta carregar de caminhos relativos diferentes
-            const possiblePaths = [
-                `./public/locales/${this.locale}/auth.json`,
-                `public/locales/${this.locale}/auth.json`,
-                `locales/${this.locale}/auth.json`,
-                `./locales/${this.locale}/auth.json`
-            ];
-
-            let response;
-            let lastError;
-
-            // Tenta cada caminho até encontrar um que funcione
-            for (const path of possiblePaths) {
-                try {
-                    console.log('Tentando carregar traduções de:', path);
-                    response = await fetch(path);
-                    if (response.ok) {
-                        console.log('Traduções carregadas com sucesso de:', path);
-                        break;
-                    }
-                } catch (err) {
-                    lastError = err;
-                    console.warn(`Falha ao carregar de ${path}:`, err);
-                }
-            }
-
-            if (!response || !response.ok) {
-                throw lastError || new Error(`Não foi possível carregar as traduções. Status: ${response ? response.status : 'no response'}`);
+            const response = await fetch(`public/locales/${this.locale}/auth.json`);
+// ------------> -----------> -----------> -----------> -----------> -----------> -----------> 
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
 // ---------> Convert response to JSON and store translations
             this.translations = await response.json();
