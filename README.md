@@ -9,5 +9,7 @@ A ideia é que o sistema atue como um agente inteligente, capaz de chamar outras
 A parte de front-end que eu criei serve para facilitar o acesso à documentação do projeto, que estará disponível no site. Além disso, ela terá o download do próprio OS/LLM e uma pequena interface para testar e entender melhor a ideia.
 
 ---
-Eu sei que este é um projeto bastante ambicioso para uma pessoa só. Se você achou a ideia interessante e gostaria de contribuir, ficarei muito feliz com sua ajuda.
+Eu sei que este é um projeto bastante ambicioso para uma pessoa só. Se você achou a ideia interessante e gostaria de contribuir, ficarei muito feliz com sua ajuda. 
 
+
+🫨☕ rebuild
