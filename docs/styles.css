@@ -188,7 +188,7 @@ body {
     display: flex;
     flex-direction:column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     width: 45px;
     height: 45px;
 }
@@ -209,6 +209,7 @@ body {
     outline: none !important;
     width: 42px; 
     height: 42px; 
+    margin-bottom:7px;
 }
 
 .header-icon:hover {
@@ -236,10 +237,10 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
     transition: all 0.2s ease;
-    opacity: 0.5;
+    opacity: 0.3;
     border: 1px solid var(--border-color);
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 15px;
     width: 45px; 
     height: 45px; 
 }
@@ -979,7 +980,7 @@ section {
 /* ---------------------------------------------> Responsividade*/
 
 /* Tablets */
-@media (max-width: 900px) {
+@media (max-width: 1055px) {
     .nav-toggle {
         display: flex;
     }
