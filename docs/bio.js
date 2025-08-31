@@ -1,18 +1,16 @@
 console.log('[bio.js] Iniciando carregamento do script bio.js');
-
-// Obtém os parâmetros da URL
+//write diagram the flow of the code🗺️
 const urlParams = new URLSearchParams(window.location.search);
-const mode = urlParams.get('mode') || 'mistral'; // Valor padrão 'mistral' se não houver parâmetro
+const mode = urlParams.get('mode') || 'mistral'; 
 console.log('[bio.js] Parâmetro mode:', mode);
 
-// Elemento container onde o conteúdo será inserido
 const container = document.querySelector('.container');
 if (!container) {
     console.error('[bio.js] Erro: Elemento .container não encontrado no DOM');
     throw new Error('Elemento .container não encontrado no DOM');
 }
 
-// Mostra mensagem de carregamento
+
 container.innerHTML = '<p>Carregando informações do modelo...</p>';
 
 class Paper {
@@ -24,9 +22,9 @@ class Paper {
 
     setData({ title = '', description = '', footer = '' } = {}) {
         this.title = title;
-        this.text = description; // Note que no JSON o campo é 'description', não 'text'
+        this.text = description; 
         this.footer = footer;
-        return this; // Permite method chaining
+        return this; 
     }
 
     createTitle() {
@@ -63,20 +61,15 @@ class Paper {
         this.createFooter();
     }
 }
-
-// Função para inicializar a aplicação
+//split to another file😕
 function initApp() {
     console.log('[bio.js] Iniciando aplicação...');
     console.log('[bio.js] Modo:', mode);
     console.log('[bio.js] URL atual:', window.location.href);
     
-    // Cria uma instância de Paper
     const paper = new Paper();
-    console.log('[bio.js] Instância de Paper criada');
     
-    // Função para processar os modelos e exibir o conteúdo
     function processModels(models) {
-        console.log('[bio.js] Processando modelos:', models);
         
         if (!Array.isArray(models)) {
             console.error('[bio.js] Erro: Dados de modelos inválidos (não é um array):', models);
@@ -89,8 +82,7 @@ function initApp() {
             container.innerHTML = '<p>Erro: Nenhum modelo disponível.</p>';
             return false;
         }
-        
-        // Encontra o modelo pelo ID
+
         console.log(`[bio.js] Procurando modelo com ID: ${mode}`);
         const model = models.find(item => item && item.id === mode);
         
@@ -110,7 +102,6 @@ function initApp() {
         console.log('[bio.js] Modelo encontrado:', model);
         
         try {
-            // Atualiza e renderiza o paper
             paper.setData({
                 title: model.title || 'Sem título',
                 description: model.description || 'Sem descrição',
@@ -126,22 +117,19 @@ function initApp() {
         }
     }
     
-    // Função para tentar carregar os modelos diretamente
+// reduce IFs 🫨😕
     function tryLoadModelsDirectly(forceReload = false) {
         console.log('[bio.js] Tentando carregar modelos diretamente...');
-        
-        // Tenta acessar diretamente o i18n
+
         if (window.i18n) {
             console.log('[bio.js] i18n disponível no objeto window');
-            
-            // Verifica se temos os modelos carregados
+
             if (window.i18n.translations && window.i18n.translations.models) {
                 console.log('[bio.js] Modelos encontrados diretamente no i18n:', window.i18n.translations.models);
                 return processModels(window.i18n.translations.models);
             } else {
                 console.log('[bio.js] i18n.translations.models não disponível:', window.i18n.translations);
-                
-                // Tenta forçar o carregamento se necessário
+
                 if (forceReload && typeof window.i18n.loadTranslations === 'function') {
                     console.log('[bio.js] Tentando forçar recarregamento das traduções...');
                     window.i18n.loadTranslations().then(() => {
@@ -157,8 +145,6 @@ function initApp() {
         } else {
             console.log('[bio.js] i18n não está disponível no objeto window');
         }
-        
-        // Tenta carregar diretamente do arquivo JSON
         console.log('[bio.js] Tentando carregar models.json diretamente...');
         
         return fetch(`locales/pt/models.json`)
@@ -172,7 +158,6 @@ function initApp() {
                 console.log('[bio.js] Models carregados diretamente:', models);
                 const result = processModels(models);
                 
-                // Se conseguiu processar, tenta salvar no i18n para uso futuro
                 if (result && window.i18n) {
                     console.log('[bio.js] Salvando modelos no i18n para uso futuro');
                     window.i18n.translations = window.i18n.translations || {};
@@ -191,11 +176,9 @@ function initApp() {
             });
     }
     
-    // Configura o listener para o evento 'i18n:ready'
     function onI18nReady(e) {
         console.log('[bio.js] Evento i18n:ready recebido:', e.detail);
         
-        // Remove o event listener para evitar múltiplas execuções
         document.removeEventListener('i18n:ready', onI18nReady);
         
         if (e.detail && e.detail.models) {
@@ -204,32 +187,25 @@ function initApp() {
             
             if (!success) {
                 console.warn('[bio.js] Falha ao processar modelos do evento, tentando carregar diretamente...');
-                tryLoadModelsDirectly(true); // Força recarregamento
+                tryLoadModelsDirectly(true); 
             }
         } else {
             console.warn('[bio.js] Evento i18n:ready sem modelos válidos, tentando carregar diretamente...');
-            tryLoadModelsDirectly(true); // Força recarregamento
+            tryLoadModelsDirectly(true); 
         }
     }
-    
-    // Adiciona o event listener para o evento 'i18n:ready'
-    console.log('[bio.js] Adicionando listener para o evento i18n:ready');
     document.addEventListener('i18n:ready', onI18nReady);
     
-    // Variável para controlar se já processamos os modelos
     let modelsProcessed = false;
     
-    // Tenta carregar imediatamente se o i18n já estiver disponível
     if (window.i18n) {
         console.log('[bio.js] i18n já está disponível no objeto window');
         
-        // Verifica se já temos os modelos carregados
         if (window.i18n.translations && window.i18n.translations.models) {
             console.log('[bio.js] Modelos já carregados no i18n:', window.i18n.translations.models);
             modelsProcessed = processModels(window.i18n.translations.models);
         } else {
             console.log('[bio.js] Nenhum modelo carregado no i18n, forçando look()...');
-            // Força o carregamento das traduções
             if (typeof window.i18n.look === 'function') {
                 window.i18n.look();
             } else if (typeof window.i18n.loadTranslations === 'function') {
@@ -239,9 +215,7 @@ function initApp() {
     } else {
         console.log('[bio.js] i18n ainda não está disponível no objeto window');
     }
-    
-    // Fallback: Tenta novamente após um tempo se não receber o evento ou se o processamento falhou
-    const fallbackDelay = 1500; // 1.5 segundos
+    const fallbackDelay = 1500; 
     console.log(`[bio.js] Configurando fallback para tentar novamente em ${fallbackDelay}ms`);
     
     const fallbackTimer = setTimeout(() => {
@@ -259,17 +233,16 @@ function initApp() {
         }
     }, fallbackDelay);
     
-    // Limpa o timeout se os modelos forem carregados com sucesso
+
     if (modelsProcessed) {
         clearTimeout(fallbackTimer);
     }
 }
 
-// Inicia a aplicação quando o DOM estiver pronto
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initApp);
 } else {
-    // DOM já está pronto
     initApp();
 }
 
