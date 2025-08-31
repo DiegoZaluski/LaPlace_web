@@ -12,38 +12,119 @@ class I18n {
             navigator.language || 
             'pt';
 // ------------> -----------> -----------> ----------->   
-        this.translations = {}; // store translations
-        this.fallbackLocale = 'en'; // fallback language
-        
-        // load translations on initialization
+        this.translations = {}; 
+        this.fallbackLocale = 'en'; 
         this.loadTranslations();
-        // observer storage event change if not exist call new method to change localStorage
+        this.copy;
         window.addEventListener('storage', (e) => {
             if (e.key === 'userLanguage' && e.newValue !== this.locale) { // verify if this function is really useful in the code cleaning and review 
                 this.changeLanguage(e.newValue);
             }
         });
     }
-// -----> Load translations from JSON file corresponding to the current language.
-
+    look() {
+        if (!this.translations || !this.translations.models) {
+            console.warn('Dados de modelos não carregados ainda');
+            console.warn('this.translations:', this.translations);
+            return;
+        }
+        
+        if (this.copy !== this.locale) {
+            try {
+                const event = new CustomEvent('i18n:ready', {
+                    detail: {
+                        models: Array.isArray(this.translations.models) ? this.translations.models : [],
+                        locale: this.locale
+                    },
+                    bubbles: true,
+                    cancelable: true
+                });//➕➕🫨
+                
+                this.copy = this.locale;
+                const dispatched = document.dispatchEvent(event);//let's go
+                const hasListeners = document.getEventListeners && typeof document.getEventListeners === 'function' && document.getEventListeners('i18n:ready').length > 0;//🫨  
+                
+                if (!hasListeners) {
+                    console.warn('Nenhum listener registrado para o evento i18n:ready');
+                }
+            } catch (error) {
+                console.error('Erro ao disparar evento i18n:ready:', error);
+            }
+        }
+    }
     async loadTranslations() { // get translations from json file
         try {
-            const response = await fetch(`locales/${this.locale}/auth.json`);
-// ------------> -----------> -----------> -----------> -----------> -----------> -----------> 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-// ---------> Convert response to JSON and store translations
-            this.translations = await response.json();
+            console.log(`[i18n] Iniciando carregamento de traduções para o locale: ${this.locale}`);
+            
+            // Carrega auth.json e models.json em paralelo
+            console.log(`[i18n] Fazendo requisições para auth.json e models.json`);
+            const [authResponse, modelsResponse] = await Promise.all([
+                fetch(`locales/${this.locale}/auth.json`).catch(err => {
+                    console.error(`[i18n] Erro ao buscar auth.json:`, err);
+                    throw err;
+                }),
+                fetch(`locales/${this.locale}/models.json`).catch(err => {
+                    console.error(`[i18n] Erro ao buscar models.json:`, err);
+                    throw err;
+                })
+            ]);
 
-// ---------> Update page elements with new translations
+            console.log(`[i18n] Respostas recebidas:`, {
+                authOk: authResponse.ok,
+                modelsOk: modelsResponse.ok
+            });
+
+            // Verifica se as respostas são válidas
+            if (!authResponse.ok) {
+                throw new Error(`[i18n] Erro ao carregar auth.json: ${authResponse.status}`);
+            }
+            if (!modelsResponse.ok) {
+                throw new Error(`[i18n] Erro ao carregar models.json: ${modelsResponse.status}`);
+            }
+
+            console.log(`[i18n] Convertendo respostas para JSON...`);
+            
+            // Converte as respostas para JSON
+            let auth, models;
+            try {
+                [auth, models] = await Promise.all([
+                    authResponse.json(),
+                    modelsResponse.json()
+                ]);
+                console.log(`[i18n] Dados convertidos com sucesso`);
+            } catch (jsonError) {
+                console.error(`[i18n] Erro ao converter JSON:`, jsonError);
+                throw new Error(`[i18n] Erro ao processar os arquivos de tradução`);
+            }
+
+            console.log('[i18n] Dados carregados:', { 
+                auth: auth ? 'OK' : 'Falha', 
+                models: models ? `Array(${Array.isArray(models) ? models.length : 'não-array'})` : 'Falha' 
+            });
+            
+            if (!Array.isArray(models)) {
+                console.error(`[i18n] Erro: models não é um array:`, models);
+                throw new Error(`[i18n] Formato inválido para models.json`);
+            }
+
+            this.translations = { 
+                ...(auth || {}), 
+                models: models
+            };
+            
+            console.log('[i18n] Traduções atualizadas com sucesso');
+            console.log('[i18n] Chamando this.look()...');
+            this.look();
+
             this.updatePage();
+            
+            console.log('[i18n] loadTranslations concluído com sucesso');
         } catch (error) {
             console.warn(`Falha ao carregar ${this.locale}, tentando ${this.fallbackLocale}...`, error);
             
 // ---------> call fallback language
             if (this.locale !== this.fallbackLocale) {
-//-----> -----> -----> -----> -----> -----> -----> -----> 🧐
+//---------------------------------------------------->🧐
                 const originalLocale = this.locale;
                 this.locale = this.fallbackLocale;
 // 🫂
@@ -62,7 +143,7 @@ class I18n {
         let translation = key.split('.').reduce((obj, k) => 
             (obj && obj[k] !== undefined) ? obj[k] : null, 
         this.translations) || key; //➕➕➕
-//--------> ---------> ---------> ---------> ---------> ---------> ---------> ---------> 🕹️
+//--------> 🕹️
 // ----------------> if translation is object return object (useful for complex objects)
         if (typeof translation === 'object') {
             return translation;
@@ -87,7 +168,6 @@ class I18n {
             this.loadTranslations();
         }
     }
-
     updatePage() {
 //------> find all elements with data-i18n attribute
         document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -150,7 +230,7 @@ class I18n {
 }// ➕➕➕
 window.i18n = new I18n();
 
-/**
+/** tenho que atualiza o diagrama 😁☕
  * -------------------------------------------->
  *      DIAGRAMA DE FLUXO DA CLASSE I18N🔰
  * <--------------------------------------------

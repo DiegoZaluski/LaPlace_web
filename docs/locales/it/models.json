@@ -1,0 +1,50 @@
+[
+    {
+        "id": "mistral",
+        "title": "Mistral AI",
+        "description": "Mistral AI è una startup francese di intelligenza artificiale fondata nell'aprile 2023, con sede a Parigi. L'azienda è stata fondata da tre rinomati ricercatori di IA: Arthur Mensch (ex Google DeepMind), Guillaume Lample e Timothée Lacroix (entrambi ex Meta). L'azienda prende il nome dal mistral, un vento forte e freddo del sud della Francia. Mistral AI è specializzata nello sviluppo di grandi modelli linguistici (LLM) open source, in particolare Mistral 7B, un modello da 7 miliardi di parametri che supera modelli molto più grandi in vari benchmark. L'azienda ha anche sviluppato Mixtral 8x7B, che supera GPT-3.5 in molti test, oltre a modelli più recenti come Mistral Small 3.1 e Mistral Medium 3. L'approccio di Mistral AI combina alte prestazioni ed efficienza computazionale, rendendo l'IA avanzata più accessibile.",
+        "footer": "Fonte: Wikipedia - Mistral AI"
+    },
+    {
+        "id": "stable",
+        "title": "Stable Diffusion XL",
+        "description": "Stable Diffusion XL è un modello avanzato di generazione di immagini basato sull'IA, sviluppato dal progetto Latent Diffusion da ricercatori dell'Università Ludwig Maximilian di Monaco e dell'Università di Heidelberg. Il modello è stato successivamente sviluppato in collaborazione con Stability AI. A differenza di altri modelli di diffusione, Stable Diffusion opera in uno spazio latente a dimensione inferiore, consentendogli di funzionare su GPU consumer. Stable Diffusion XL è una versione migliorata che offre una risoluzione e una qualità dell'immagine superiori. Il modello può generare immagini realistiche da descrizioni testuali e modificare immagini esistenti. Una caratteristica degna di nota è la sua natura open source, che ha portato a una vasta adozione e personalizzazione da parte della comunità IA.",
+        "footer": "Fonte: Wikipedia - Stable Diffusion"
+    },
+    {
+        "id": "whisper",
+        "title": "Whisper",
+        "description": "Whisper è un modello di riconoscimento vocale sviluppato da OpenAI. A differenza degli approcci precedenti, Whisper utilizza un'architettura trasformatore encoder-decoder addestrata su 680.000 ore di dati multilingue, inclusi 117.000 ore in 96 lingue diverse. Il modello si distingue per la sua capacità di riconoscere e trascrivere il parlato in vari accenti e condizioni acustiche, supportando anche la traduzione in inglese. Whisper elabora sequenze audio fino a 30 secondi, convertendo il parlato in testo con elevata precisione. Una caratteristica notevole è la sua capacità di gestire rumori di fondo e gergo tecnico, rendendolo uno strumento versatile per la trascrizione e l'analisi audio.",
+        "footer": "Fonte: Documentazione ufficiale di Whisper"
+    },
+    {
+        "id": "codellama",
+        "title": "CodeLlama",
+        "description": "CodeLlama è un modello linguistico specializzato nella programmazione, sviluppato da Meta. Basato sull'architettura LLaMA 2, CodeLlama è stato specificamente addestrato su grandi volumi di codice sorgente e documentazione tecnica. Il modello è disponibile in varie versioni, che vanno da 7 a 70 miliardi di parametri, consentendo diversi livelli di complessità ed efficienza computazionale. CodeLlama si distingue per la sua capacità di assistere gli sviluppatori in attività come il completamento del codice, il debug, la documentazione e persino la generazione di nuove funzionalità. La sua capacità di comprendere e generare codice in più linguaggi di programmazione lo rende uno strumento prezioso per lo sviluppo software.",
+        "footer": "Fonte: Documentazione ufficiale di CodeLlama"
+    },
+    {
+        "id": "falcon",
+        "title": "Falcon 40B",
+        "description": "Falcon 40B è un modello linguistico su larga scala sviluppato dal Technology Innovation Institute (TII) negli Emirati Arabi Uniti. Con 40 miliardi di parametri, il modello è stato addestrato su 1.000 miliardi di token di dati web, incluso il set di dati RefinedWeb, che è stato filtrato e lavorato per garantire un'elevata qualità. Falcon 40B utilizza un'architettura trasformatore ottimizzata con attenzione multi-query e FlashAttention per una migliore efficienza computazionale. Il modello si distingue per le sue prestazioni nelle attività di elaborazione del linguaggio naturale, competendo con altri modelli su larga scala mantenendo un'architettura più efficiente. Falcon 40B è distribuito con licenza Apache 2.0, consentendo l'uso commerciale e accademico.",
+        "footer": "Fonte: Documentazione ufficiale di Falcon 40B"
+    },
+    {
+        "id": "bark",
+        "title": "Bark",
+        "description": "Bark è un modello di generazione audio sviluppato da Suno AI, in grado di creare audio realistico a partire da testo. A differenza dei tradizionali modelli di sintesi vocale, Bark è un modello generativo testo-audio che può produrre non solo linguaggio naturale, ma anche musica, effetti sonori e altri suoni non verbali. Il modello utilizza un'architettura basata su trasformatori ed è stato addestrato su un'ampia varietà di dati audio, consentendogli di catturare sfumature come intonazione, ritmo ed emozione nel parlato. Bark si distingue per la sua capacità di generare audio in più lingue e di imitare diversi stili di eloquio, rendendolo uno strumento versatile per applicazioni che vanno dagli assistenti virtuali alla produzione di contenuti multimediali.",
+        "footer": "Fonte: Documentazione ufficiale di Bark"
+    },
+    {
+        "id": "llama",
+        "title": "Llama 3",
+        "description": "Llama 3 è l'ultima iterazione della famiglia di grandi modelli linguistici sviluppati da Meta. Successore del riuscito LLaMA 2, questo modello rappresenta un significativo passo avanti in termini di prestazioni ed efficienza. Llama 3 è stato addestrato su un insieme di dati massiccio e diversificato, che include testo da Internet, codice sorgente, documenti accademici e conversazioni. Il modello si distingue per la sua avanzata comprensione contestuale, generazione di testo coerente e ragionamento complesso. Con un'architettura ottimizzata, Llama 3 offre un equilibrio tra prestazioni ed efficienza computazionale, rendendolo adatto a un'ampia gamma di applicazioni, dagli assistenti virtuali all'analisi di dati complessi. Meta ha reso disponibile il modello in diverse dimensioni per soddisfare varie esigenze di capacità e prestazioni.",
+        "footer": "Fonte: Documentazione ufficiale di Llama 3"
+    },
+    {
+        "id": "autogpt",
+        "title": "AutoGPT",
+        "description": "AutoGPT è un progetto open source che implementa un sistema di agente IA autonomo, basato sul modello GPT-4 di OpenAI. A differenza dei tradizionali modelli linguistici che rispondono a comandi individuali, AutoGPT è progettato per eseguire compiti complessi in modo autonomo, stabilendo i propri obiettivi e prendendo decisioni sequenziali per raggiungerli. Il sistema può accedere a Internet, gestire memorie a breve e lungo termine ed eseguire azioni per conto dell'utente. Sebbene rivoluzionario nel suo concetto, AutoGPT affronta sfide come la tendenza a entrare in loop, generare informazioni errate e avere elevati costi operativi. Nonostante questi limiti, rappresenta una pietra miliare nello sviluppo di agenti IA autonomi ed è stato ampiamente adottato dalla comunità degli sviluppatori.",
+        "footer": "Fonte: Wikipedia - AutoGPT"
+    }
+]
