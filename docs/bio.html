@@ -59,70 +59,7 @@
     <article class="container">
         <p>Carregando conteúdo...</p>
     </article> 
-    
-    <script>
-        // Configura o parâmetro mode com um valor padrão válido
-        (function() {
-            console.log('Iniciando carregamento da página...');
-            
-            const defaultModel = 'mistral'; // ID que existe no models.json
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            // Se não houver parâmetro mode, adiciona o padrão
-            if (!urlParams.has('mode')) {
-                const newUrl = new URL(window.location);
-                newUrl.searchParams.set('mode', defaultModel);
-                window.history.replaceState({}, '', newUrl);
-                console.log('Parâmetro mode adicionado à URL:', newUrl);
-            }
-            
-            // Função para carregar scripts na ordem correta
-            function loadScripts() {
-                console.log('Carregando scripts...');
-                
-                // Primeiro carrega o i18n.js
-                const i18nScript = document.createElement('script');
-                i18nScript.src = 'i18n.js';
-                i18nScript.async = false; // Importante: garante a ordem de execução
-                
-                i18nScript.onload = function() {
-                    console.log('i18n.js carregado com sucesso');
-                    
-                    // Adiciona um listener para o evento 'i18n:ready' antes de carregar o bio.js
-                    document.addEventListener('i18n:ready', function(e) {
-                        console.log('Evento i18n:ready capturado no bio.html:', e.detail);
-                    });
-                    
-                    // Carrega o bio.js após o i18n estar pronto
-                    const bioScript = document.createElement('script');
-                    bioScript.src = 'bio.js';
-                    bioScript.async = false; // Importante: garante a ordem de execução
-                    
-                    bioScript.onload = function() {
-                        console.log('bio.js carregado com sucesso');
-                    };
-                    
-                    bioScript.onerror = function(error) {
-                        console.error('Erro ao carregar bio.js:', error);
-                    };
-                    
-                    document.body.appendChild(bioScript);
-                };
-                
-                i18nScript.onerror = function(error) {
-                    console.error('Erro ao carregar i18n.js:', error);
-                };
-                
-                document.body.appendChild(i18nScript);
-            }
-            
-            // Inicia o carregamento dos scripts quando o DOM estiver pronto
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', loadScripts);
-            } else {
-                loadScripts();
-            }
-        })();
-    </script>
+    <script src="i18n.js"></script>
+    <script type="module" src="bio.js"></script>
 </body>
 </html>

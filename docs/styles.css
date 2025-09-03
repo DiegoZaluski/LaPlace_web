@@ -31,8 +31,8 @@
     --text-on-dark: #f0f6fc;  /* usado 5x */
     
     /* Cores do tema - Padrão Dark Mode */
-    --bg-primary: #0d1117;  /* usado 6x */
-    --bg-secondary: #161b22;  /* usado 3x */
+    --bg-primary: #070B15;  /* usado 6x */
+    --bg-secondary: #070B15;  /* usado 3x */
     --bg-tertiary: #21262d;  /* usado 1x */
     --bg-card: #161b22;  /* usado 4x */
     --text-color-primary: #f0f6fc;  /* usado 15x */
@@ -938,6 +938,7 @@ section {
     justify-content: center;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
+    transform: translateY(-20px)
 }
 
 .contact-link {

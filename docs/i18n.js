@@ -1,10 +1,6 @@
 // i18n 🌐 
 class I18n {
-    // Defines the current language, prioritizing:
-    // 1. Language saved in localStorage
-    // 2. Browser's first preferred language (navigator.languages[0])
-    // 3. Browser's language (navigator.language)
-    // 4. Default 'pt' (Portuguese)
+                //😵‍💫//
 //--------------------------------------------------------------------------->
     constructor() {
         this.locale = localStorage.getItem('userLanguage') || 
