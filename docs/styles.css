@@ -9,38 +9,31 @@
 
 :root {
     /*Filtro de fundo*/
-    --filter: url('images/6674f0cdb5b7b401612cf065_noise-50.avif'); /* usado 2x */
-    --op: 8.5; /* não usado */
-    
+    --filter: url('images/6674f0cdb5b7b401612cf065_noise-50.avif'); /* Usado em: body, .hero, section */
     /* Cores base */
-    --white: #ffffff;  /* usado 1x */
-    --black: #000000;  /* usado 1x */
-    
+    --white: #ffffff;  /* Usado em: .ai-message.user */
+    --black: #000000;  /* Usado em: .ai-message.assistant */
     /* Tons de cinza */
-    --medium-gray: #65676b;  /* usado 2x */
-    
+    --medium-gray: #65676b;  /* Usado em: .nav-menu a, .hero-subtitle */
     /* Cores principais */
-    --primary: rgb(151, 47, 47);  /* usado 3x */
-    --primary-light: rgb(170, 60, 60);  /* usado 2x */
-    --primary-blue: var(--primary);  /* não usado */
-    
+    --primary: rgb(151, 47, 47);  /* Usado em: .nav-menu a:hover, .btn-primary, .highlight */
+    --primary-light: rgb(170, 60, 60);  /* Usado em: .btn-primary:hover, .btn-secondary:hover */
     /* Cores de texto */
-    --text-primary: #1c1e21;  /* usado 4x */
-    --text-secondary: #65676b;  /* usado 4x */
-    --text-on-primary: #ffffff;  /* usado 2x */
-    --text-on-dark: #f0f6fc;  /* usado 5x */
-    
+    --text-primary: #1c1e21;  /* Usado em: .hamburger, .nav-menu a */
+    --text-secondary: #65676b;  /* Usado em: .hero-subtitle, .nav-menu a */
+    --text-on-primary: #ffffff;  /* Usado em: .btn-primary, .btn-secondary:hover */
+    --text-on-dark: #f0f6fc;  /* Usado em: body, .nav-menu a, .hero-title */
     /* Cores do tema - Padrão Dark Mode */
-    --bg-primary: #070B15;  /* usado 6x */
-    --bg-secondary: #070B15;  /* usado 3x */
-    --bg-tertiary: #21262d;  /* usado 1x */
-    --bg-card: #161b22;  /* usado 4x */
-    --text-color-primary: #f0f6fc;  /* usado 15x */
-    --text-color-secondary: #8b949e;  /* usado 3x */
-    --border-color: #30363d;  /* usado 7x */
-    --shadow-color: rgba(0, 0, 0, 0.3);  /* usado 3x */
-    --accent-color: rgb(151, 47, 47);  /* usado 10x */
-    --accent-hover: rgb(131, 25, 25);  /* usado 3x */
+    --bg-primary: #070B15;  /* Usado em: body, .hero, .btn-primary:hover */
+    --bg-secondary: #070B15;  /* Usado em: .theme-toggle:hover, .nav-menu a:hover, .about */
+    --bg-tertiary: #21262d;  /* Usado em: .theme-toggle */
+    --bg-card: #090C16;  /* Usado em: header, .card, .ai-message */
+    --text-color-primary: #f0f6fc;  /* Usado em: body, .header-icon, .nav-menu */
+    --text-color-secondary: #8b949e;  /* Usado em: .hero-subtitle, .tech-stack */
+    --border-color: #30363d;  /* Usado em: header, .theme-toggle, .card, .ai-input */
+    --shadow-color: rgba(0, 0, 0, 0.3);  /* Usado em: .btn-primary:hover, .card:hover */
+    --accent-color: rgb(151, 47, 47);  /* Usado em: .logo, .btn-primary, .highlight, .nav-menu a:hover */
+    --accent-hover: rgb(131, 25, 25);  /* Usado em: .btn-primary:hover, .btn-secondary:hover */
 }
 
 /* Light mode */
@@ -60,39 +53,36 @@
 
 :root {
     /* Tipografia */
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;  /* usado 1x */
-    --font-size-xs: 0.75rem;  /* usado 2x */
-    --font-size-sm: 0.875rem;  /* usado 5x */
-    --font-size-base: 1rem;  /* usado 3x */
-    --font-size-lg: 1.125rem;  /* usado 4x */
-    --font-size-xl: 1.25rem;  /* usado 6x */
-    --font-size-2xl: 1.5rem;  /* usado 3x */
-    --font-size-3xl: 1.875rem;  /* usado 2x */
-    --font-size-4xl: 2.25rem;  /* usado 1x */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;  /* Usado em: body */
+    --font-size-xs: 0.75rem;  /* Usado em: .tech-stack, .ai-message-time */
+    --font-size-sm: 0.875rem;  /* Usado em: .nav-menu a, .hero-subtitle, .card-text */
+    --font-size-base: 1rem;  /* Usado em: body, .btn, .ai-input */
+    --font-size-lg: 1.125rem;  /* Usado em: .hero-subtitle, .section-text, .card-title */
+    --font-size-xl: 1.25rem;  /* Usado em: .logo, .section-title, .btn */
+    --font-size-2xl: 1.5rem;  /* Usado em: .hero-title, .section-title */
+    --font-size-3xl: 1.875rem;  /* Usado em: .section-title */
+    --font-size-4xl: 2.25rem;  /* Usado em: .hero-title */
     
     /* Espaçamentos */
-    --spacing-xs: 0.25rem;  /* usado 3x */
-    --spacing-sm: 0.5rem;  /* usado 5x */
-    --spacing-md: 1rem;  /* usado 8x */
-    --spacing-lg: 1.5rem;  /* usado 6x */
-    --spacing-xl: 1rem;  /* usado 4x */
-    --spacing-2xl: 3rem;  /* usado 3x */
-    --spacing-3xl: 4rem;  /* usado 2x */
-    
+    --spacing-xs: 0.25rem;  /* Usado em: .tech-stack, .ai-message */
+    --spacing-sm: 0.5rem;  /* Usado em: .nav-menu a, .hero-actions, .card */
+    --spacing-md: 1rem;  /* Usado em: .container, .nav-container, .btn, .ai-input */
+    --spacing-lg: 1.5rem;  /* Usado em: .hero-actions, .card, .tech-stack */
+    --spacing-xl: 1rem;  /* Usado em: .nav-menu, .hero-actions, .card-grid */
+    --spacing-2xl: 3rem;  /* Usado em: .section-title, .hero-subtitle */
+    --spacing-3xl: 4rem;  /* Usado em: section, .hero */
     /* Bordas */
-    --border-radius-sm: 0.375rem;  /* usado 2x */
-    --border-radius-md: 0.5rem;  /* usado 5x */
-    --border-radius-lg: 0.75rem;  /* usado 3x */
-    --border-radius-xl: 1rem;  /* usado 1x */
-    
+    --border-radius-sm: 0.375rem;  /* Usado em: .tech-stack-item, .ai-message */
+    --border-radius-md: 0.5rem;  /* Usado em: .nav-menu a, .card, .ai-input */
+    --border-radius-lg: 0.75rem;  /* Usado em: .btn, .card, .ai-message */
+    --border-radius-xl: 1rem;  /* Usado em: .card */
     /* Sombras */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);  /* usado 1x */
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  /* usado 3x */
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  /* usado 2x */
-    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);  /* Usado em: .card */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  /* Usado em: .card, .ai-message */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  /* Usado em: .btn:hover, .card:hover */
     /* Transições */
-    --transition-fast: 0.15s ease-in-out;  /* usado 2x */
-    --transition-normal: 0.3s ease-in-out;  /* usado 8x */
+    --transition-fast: 0.15s ease-in-out;  /* Usado em: .logo, .theme-toggle */
+    --transition-normal: 0.3s ease-in-out;  /* Usado em: body, .nav-menu a, .btn, .card */
 }
 
 @media (prefers-color-scheme: dark) {
