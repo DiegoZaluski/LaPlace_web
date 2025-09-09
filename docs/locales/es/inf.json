@@ -1,0 +1,14 @@
+[
+    {
+        "id": "Llama.cpp",
+        "title": "Llama.cpp - Marco de Inferencia Eficiente",
+        "description": "Llama.cpp es un marco de inferencia de modelos de lenguaje grande (LLM) escrito en C/C++ que permite ejecución eficiente en hardware diverso. Desarrollado como parte del ecosistema GGML, se destaca por su portabilidad y optimizaciones para múltiples arquitecturas de hardware.\n\nEl marco implementa una infraestructura minimalista sin dependencias externas, utilizando exclusivamente C/C++ nativo. Este enfoque proporciona portabilidad multiplataforma, rendimiento optimizado para cada arquitectura, control granular sobre asignación de recursos y tamaño reducido de binarios.\n\nImplementa un sistema avanzado de cuantización que soporta múltiples precisiones: cuantizaciones enteras de 1.5-bit hasta 8-bit, algoritmos de cuantización adaptativos para preservación de calidad y métodos híbridos para equilibrar precisión y rendimiento.\n\nSoporta múltiples arquitecturas: ARM con optimizaciones NEON, x86 con AVX/AVX2/AVX512, aceleración GPU vía CUDA/HIP/Metal/Vulkan, y NPUs especializados. El formato GGUF ofrece carga eficiente, compresión optimizada y metadatos autocontenidos.\n\nIdeal para inferencia edge computing, entornos offline, aplicaciones de baja latencia y escenarios de costo optimizado.",
+        "footer": "Documentación técnica basada en el repositorio oficial GGML"
+    },
+    {
+        "id": "downloads",
+        "title": "Descargas - LaPlace Attack IA",
+        "description": "**Proyecto en Desarrollo**\n\nLaPlace Attack IA aún no está disponible para descarga. Este es un proyecto experimental enfocado en crear una herramienta de pentest basada en Llama.cpp.\n\n**Estado Actual:**\n• Interfaz web: Completada\n• Sistema de traducción: Implementado\n• Backend: En desarrollo\n• Modelos de IA: En desarrollo\n\n**Objetivos del Proyecto:**\n• Herramienta de pentest para Linux\n• Mapeo de puertos y servicios\n• Optimizado para hardware de gama media\n• Ejecución local sin dependencia de internet\n\n**Cómo Contribuir:**\nEste es un proyecto de código abierto. Si tienes interés en IA aplicada a seguridad, tu contribución es bienvenida en el repositorio GitHub.\n\n*El proyecto está en fase inicial de desarrollo.*",
+        "footer": "© 2025 LaPlace - IA local para Pentest"
+    }
+]

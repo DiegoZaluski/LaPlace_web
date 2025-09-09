@@ -1,30 +1,30 @@
 import Paper from './Paper.js';
 // tasks  📝
-// manter o codigo limpo e organizado
-// adicionar comnetarios para deixa mais facil de entender ele no futuro 
-// mudar comentario para ingles para padronizar linguagem
-// resolver lentidão 
+// keep code clean and organized
+// add comments to make it easier to understand in the future
+// change comments to english to standardize language
+// resolve performance issues 
 
 //write diagram the flow of the code🗺️
 const urlParams = new URLSearchParams(window.location.search);
-const mode = urlParams.get('mode') || 'mistral'; 
+const mode = urlParams.get('mode') || 'downloads'; 
 
 const container = document.querySelector('.container');
 if (!container) {
-    throw new Error('Elemento .container não encontrado no DOM');
+    throw new Error('Element .container not found in DOM');
 }
 
-container.innerHTML = '<p>Carregando informações do modelo...</p>';
+container.innerHTML = '<p>Loading model information...</p>';
 
 //split to another file😕
-function initApp() {// function para iniciar a aplicação
+function initApp() {// function to initialize the application
     const paper = new Paper(container);
-    document.addEventListener('i18n:ready',(e) => onI18nReady(e, paper)); // mudado para não ser chamado imediatamente 
-    let modelsProcessed = false; // variavel para verifica se os modelos foram processados
+    document.addEventListener('i18n:ready',(e) => onI18nReady(e, paper)); // changed to not be called immediately 
+    let modelsProcessed = false; // variable to check if models were processed
     
     if (window.i18n) {     
-        if (window.i18n?.translations?.models) {// verifica se models foram carregados 
-            modelsProcessed = processModels(window.i18n.translations.models, paper);// joga para processModels🦖🍃
+        if (window.i18n?.translations?.models) {// check if models were loaded 
+            modelsProcessed = processModels(window.i18n.translations.models, paper);// pass to processModels🦖🍃
         } else {
             if (typeof window.i18n.look === 'function') {
                 window.i18n.look();
@@ -37,10 +37,10 @@ function initApp() {// function para iniciar a aplicação
         if (!modelsProcessed) {
             tryLoadModelsDirectly(true, paper).then(success => {
                 if (!success) {
-                    console.warn('[bio.js] Fallback: Falha ao carregar modelos diretamente');
+                    console.warn('[bio.js] Fallback: Failed to load models directly');
                     container.innerHTML = `
-                        <p>Não foi possível carregar as informações do modelo.</p>
-                        <p>Por favor, verifique sua conexão e <a href="javascript:window.location.reload()">recarregue a página</a>.</p>
+                        <p>Could not load model information.</p>
+                        <p>Please check your connection and <a href="javascript:window.location.reload()">reload the page</a>.</p>
                     `;
                 }
             });
@@ -53,26 +53,26 @@ function initApp() {// function para iniciar a aplicação
     }
 }
 
-//---------------------------------------------------------------------------------------------------->1-🦖
+//---------------------------------------------------------------------------------------------------->1
 function processModels(models, paper) {
         
     if (!Array.isArray(models)) {
-        console.error('[bio.js] Erro: Dados de modelos inválidos (não é um array):', models);
-        container.innerHTML = '<p>Erro: Dados de modelos inválidos.</p>';
+        console.error('[bio.js] Error: Invalid model data (not an array):', models);
+        container.innerHTML = '<p>Error: Invalid model data.</p>';
         return false;
     }
     
     if (models.length === 0) {
-        console.error('[bio.js] Erro: Lista de modelos vazia');
-        container.innerHTML = '<p>Erro: Nenhum modelo disponível.</p>';
+        console.error('[bio.js] Error: Empty model list');
+        container.innerHTML = '<p>Error: No models available.</p>';
         return false;
     }
     const model = models.find(item => item && item.id === mode);
     
     if (!model) {
-        console.error(`[bio.js] Modelo com ID "${mode}" não encontrado`);
+        console.error(`[bio.js] Model with ID "${mode}" not found`);
         container.innerHTML = `
-            <p>Modelo "${mode}" não encontrado. Modelos disponíveis:</p>
+            <p>Model "${mode}" not found. Available models:</p>
             <ul>
                 ${models.map(m => m ? `<li><a href="?mode=${m.id}">${m.title || m.id}</a></li>` : '').join('')}
             </ul>
@@ -81,46 +81,46 @@ function processModels(models, paper) {
     }
     try {
         paper.setData({
-            title: model.title || 'Sem título',
-            description: model.description || 'Sem descrição',
+            title: model.title || 'No title',
+            description: model.description || 'No description',
             footer: model.footer || ''
         }).render();
         
         return true;
     } catch (error) {
-        console.error('[bio.js] Erro ao renderizar o modelo:', error);
-        container.innerHTML = '<p>Erro ao exibir as informações do modelo.</p>';
+        console.error('[bio.js] Error rendering model:', error);
+        container.innerHTML = '<p>Error displaying model information.</p>';
         return false;
     }
 }
-//------------------------------------------------------------------------------------------------------------------------->2-🦖
+//------------------------------------------------------------------------------------------------------------------------->2
 // reduce IFs 🫨😕
 function tryLoadModelsDirectly(forceReload = false, paper) {
-    console.log('[bio.js] Tentando carregar modelos diretamente...');
+    console.log('[bio.js] Trying to load models directly...');
 
     if (window.i18n) {
-        console.log('[bio.js] i18n disponível no objeto window');
+        console.log('[bio.js] i18n available in window object');
 
         if (window.i18n.translations && window.i18n.translations.models) {
-            console.log('[bio.js] Modelos encontrados diretamente no i18n:', window.i18n.translations.models);
+            console.log('[bio.js] Models found directly in i18n:', window.i18n.translations.models);
             return processModels(window.i18n.translations.models, paper);
         } else {
-            console.log('[bio.js] i18n.translations.models não disponível:', window.i18n.translations);
+            console.log('[bio.js] i18n.translations.models not available:', window.i18n.translations);
 
             if (forceReload && typeof window.i18n.loadTranslations === 'function') {
-                console.log('[bio.js] Tentando forçar recarregamento das traduções...');
+                console.log('[bio.js] Trying to force reload translations...');
                 window.i18n.loadTranslations().then(() => {
                     if (window.i18n.translations && window.i18n.translations.models) {
-                        console.log('[bio.js] Modelos carregados após recarregamento forçado:', window.i18n.translations.models);
+                        console.log('[bio.js] Models loaded after forced reload:', window.i18n.translations.models);
                         return processModels(window.i18n.translations.models);
                     }
                 }).catch(error => {
-                    console.error('[bio.js] Erro ao forçar recarregamento:', error);
+                    console.error('[bio.js] Error forcing reload:', error);
                 });
             }
         }
     }
-    return fetch(`locales/pt/models.json`)
+    return fetch(`locales/pt/inf.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -139,13 +139,13 @@ function tryLoadModelsDirectly(forceReload = false, paper) {
         })
         .catch(error => {
             container.innerHTML = `
-                <p>Erro ao carregar os dados do modelo.</p>
-                <p>${error.message || 'Tente recarregar a página ou verificar sua conexão.'}</p>
+                <p>Error loading model data.</p>
+                <p>${error.message || 'Try reloading the page or check your connection.'}</p>
             `;
             return false;
         });
 }
-// --------------------------------------------------------------------------------------------------->3-🦖
+// --------------------------------------------------------------------------------------------------->3
 function onI18nReady(e, paper) {
     document.removeEventListener('i18n:ready', onI18nReady);
     
@@ -159,7 +159,7 @@ function onI18nReady(e, paper) {
         tryLoadModelsDirectly(true); 
     }
 }
-//----------------------------------------------------------> the end 🦖
+//----------------------------------------------------------> the end 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initApp);
 } else {
@@ -167,4 +167,4 @@ if (document.readyState === 'loading') {
 }
 
 
-// obs verifica todos os pontos se foram reconectados de forma correta sempre
+// note: always verify all points are reconnected correctly

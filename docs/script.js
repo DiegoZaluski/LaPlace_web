@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const moveY = (relativeY - 0.5) * intensityY * 30; // Aumentado de 20 para 30
             
 // ----------------> apply transformation with additional rotation based on movement
-            const rotateX = (relativeY - 0.5) * 10; // Inclinação no eixo X
-            const rotateY = (relativeX - 0.5) * -10; // Inclinação no eixo Y (negativo para efeito 3D)
+            const rotateX = (relativeY - 0.5) * 10; // X-axis tilt
+            const rotateY = (relativeX - 0.5) * -10; // Y-axis tilt (negative for 3D effect)
             
 // ----------------> apply combined transformations (parallax + 3D rotation)
             icon.style.transform = `
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // -----------------------> Add class js-loaded
     document.body.classList.add('js-loaded');
     
-    console.log('Portfolio JavaScript carregado com sucesso! 🚀');
+    console.log('Portfolio JavaScript loaded successfully! 🚀');
 });
 // -----------------------> language toggle
 const symbolToggle = document.querySelector('.header-icon');

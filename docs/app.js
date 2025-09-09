@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ----------------> i18n 
     i18n.updatePage();//➕➕➕
 
-// ----------------> exemplo de atualização de dinâmica 
+// ----------------> example of dynamic update 
     const updateGreeting = (name) => {
         const greetingElement = document.getElementById('greeting');
         if (greetingElement) {
@@ -15,7 +15,7 @@ const languageDropdown = document.querySelector('.language-dropdown');
 if (languageDropdown) {
     languageDropdown.addEventListener('click', changeButton);
 } else {
-    console.error('Elemento .language-dropdown não encontrado');
+    console.error('Element .language-dropdown not found');
 }
 function changeButton(e) { 
     e.preventDefault();

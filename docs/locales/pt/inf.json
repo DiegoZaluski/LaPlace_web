@@ -1,0 +1,14 @@
+[
+    {
+        "id": "Llama.cpp",
+        "title": "Llama.cpp - Framework de Inferência Eficiente",
+        "description": "Llama.cpp é um framework de inferência de modelos de linguagem grande (LLM) escrito em C/C++ que possibilita execução eficiente em hardware diversificado. Desenvolvido como parte do ecossistema GGML, destaca-se por sua portabilidade e otimizações para múltiplas arquiteturas de hardware.\n\nO framework implementa uma infraestrutura minimalista sem dependências externas, utilizando exclusivamente C/C++ nativo. Esta abordagem proporciona portabilidade cross-platform, performance otimizada para cada arquitetura, controle granular sobre alocação de recursos e tamanho reduzido de binários.\n\nImplementa um sistema avançado de quantização suportando múltiplas precisões: quantizações inteiras de 1.5-bit até 8-bit, algoritmos de quantização adaptativos para preservação de qualidade e métodos híbridos para balanceamento entre precisão e performance.\n\nSuporta múltiplas arquiteturas: ARM com otimizações NEON, x86 com AVX/AVX2/AVX512, aceleração GPU via CUDA/HIP/Metal/Vulkan, e NPUs especializados. O formato GGUF oferece carregamento eficiente, compactação otimizada e metadados auto-contidos.\n\nIdeal para inferência edge computing, ambientes offline, aplicações de baixa latência e cenários de custo otimizado.",
+        "footer": "Documentação técnica baseada no repositório oficial GGML"
+    },
+    {
+        "id": "downloads",
+        "title": "Downloads - LaPlace Attack IA",
+        "description": "**Projeto em Desenvolvimento**\n\nO LaPlace Attack IA ainda não está disponível para download. Este é um projeto experimental focado em criar uma ferramenta de pentest baseada em Llama.cpp.\n\n**Status Atual:**\n• Interface web: Concluída\n• Sistema de tradução: Implementado\n• Backend: Em desenvolvimento\n• Modelos de IA: Em desenvolvimento\n\n**Objetivos do Projeto:**\n• Ferramenta de pentest para Linux\n• Mapeamento de portas e serviços\n• Otimizado para hardware de médio porte\n• Execução local sem dependência de internet\n\n**Como Contribuir:**\nEste é um projeto de código aberto. Se você tem interesse em IA aplicada à segurança, sua contribuição é bem-vinda no repositório GitHub.\n\n*O projeto está em fase inicial de desenvolvimento.*",
+        "footer": "© 2025 LaPlace - IA local para Pentest"
+    }
+]

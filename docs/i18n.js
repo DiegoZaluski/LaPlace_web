@@ -3,9 +3,12 @@ class I18n {
                 //😵‍💫//
 //--------------------------------------------------------------------------->
     constructor() {
-        this.locale = localStorage.getItem('userLanguage') || 
+        let detectedLocale = localStorage.getItem('userLanguage') || 
             (navigator.languages && navigator.languages[0]) || // 1.localStorage, 2.navigator.languages, preferred 3.default -> en
             'en';
+        
+        // Extract base locale (pt-BR → pt, en-US → en)
+        this.locale = detectedLocale.split('-')[0] || 'en';
  //(navigator.languages && navigator.languages[0]) ? avoid errors in old browsers🤓
         this.translations = {}; 
         this.fallbackLocale = 'en'; 
@@ -21,7 +24,7 @@ class I18n {
 //-----------------------------------------------------------------------------------☕
     look() {
         if (!this.translations || !this.translations.models) return console.warn('this.translations: not found:', this.translations);
-//🐃🦬🐂🦙🦡🐐🐃🐃🦬🦌🐎🐆🦔🦨🐘🐏🐈‍⬛🐕
+//🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙
         if (this.copy !== this.locale) {
             try {
                 const event = new CustomEvent('i18n:ready', {
@@ -54,8 +57,8 @@ class I18n {
                     console.error(`[i18n] Err loading auth.json:`, err);
                     throw err;
                 }),
-                fetch(`locales/${this.locale}/models.json`).catch(err => {
-                    console.error(`[i18n] Err loading models.json:`, err);
+                fetch(`locales/${this.locale}/inf.json`).catch(err => {
+                    console.error(`[i18n] Err loading inf.json:`, err);
                     throw err;
                 })
             ]);
@@ -64,7 +67,7 @@ class I18n {
                 throw new Error(`[i18n] Err loading auth.json: ${authResponse.status}`);
             }
             if (!modelsResponse.ok) {
-                throw new Error(`[i18n] Err loading models.json: ${modelsResponse.status}`);
+                throw new Error(`[i18n] Err loading inf.json: ${modelsResponse.status}`);
             }
 
             let auth, models;
@@ -80,7 +83,7 @@ class I18n {
 //🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃
             
             if (!Array.isArray(models)) {
-                throw new Error(`[i18n] Format models.json invalid`);
+                throw new Error(`[i18n] Format inf.json invalid`);
             }
 
             this.translations = { 

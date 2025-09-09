@@ -1,0 +1,14 @@
+[
+    {
+        "id": "Llama.cpp",
+        "title": "Llama.cpp - Efficient Inference Framework",
+        "description": "Llama.cpp is a large language model (LLM) inference framework written in C/C++ that enables efficient execution on diverse hardware. Developed as part of the GGML ecosystem, it stands out for its portability and optimizations for multiple hardware architectures.\n\nThe framework implements a minimalist infrastructure without external dependencies, using exclusively native C/C++. This approach provides cross-platform portability, optimized performance for each architecture, granular control over resource allocation, and reduced binary size.\n\nIt implements an advanced quantization system supporting multiple precisions: integer quantizations from 1.5-bit to 8-bit, adaptive quantization algorithms for quality preservation, and hybrid methods for balancing precision and performance.\n\nSupports multiple architectures: ARM with NEON optimizations, x86 with AVX/AVX2/AVX512, GPU acceleration via CUDA/HIP/Metal/Vulkan, and specialized NPUs. The GGUF format offers efficient loading, optimized compression, and self-contained metadata.\n\nIdeal for edge computing inference, offline environments, low-latency applications, and cost-optimized scenarios.",
+        "footer": "Technical documentation based on the official GGML repository"
+    },
+    {
+        "id": "downloads",
+        "title": "Downloads - LaPlace Attack AI",
+        "description": "**Project in Development**\n\nLaPlace Attack AI is not yet available for download. This is an experimental project focused on creating a pentest tool based on Llama.cpp.\n\n**Current Status:**\n• Web interface: Completed\n• Translation system: Implemented\n• Backend: In development\n• AI models: In development\n\n**Project Goals:**\n• Pentest tool for Linux\n• Port and service mapping\n• Optimized for mid-range hardware\n• Local execution without internet dependency\n\n**How to Contribute:**\nThis is an open-source project. If you're interested in AI applied to security, your contribution is welcome on the GitHub repository.\n\n*The project is in early development phase.*",
+        "footer": "© 2025 LaPlace - Local AI for Pentest"
+    }
+]

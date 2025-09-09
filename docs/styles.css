@@ -23,7 +23,7 @@
     --text-secondary: #65676b;  /* Usado em: .hero-subtitle, .nav-menu a */
     --text-on-primary: #ffffff;  /* Usado em: .btn-primary, .btn-secondary:hover */
     --text-on-dark: #f0f6fc;  /* Usado em: body, .nav-menu a, .hero-title */
-    /* Cores do tema - Padrão Dark Mode */
+    /* Theme colors - Default Dark Mode */
     --bg-primary: #070B15;  /* Usado em: body, .hero, .btn-primary:hover .contact-link */
     --bg-secondary: #070B15;  /* Usado em: .theme-toggle:hover, .nav-menu a:hover, .about */
     --bg-tertiary: #21262d;  /* Usado em: .theme-toggle */
@@ -64,7 +64,7 @@
     --font-size-3xl: 1.875rem;  /* Usado em: .section-title */
     --font-size-4xl: 2.25rem;  /* Usado em: .hero-title */
     
-    /* Espaçamentos */
+    /* Spacing */
     --spacing-xs: 0.25rem;  /* Usado em: .tech-stack, .ai-message */
     --spacing-sm: 0.5rem;  /* Usado em: .nav-menu a, .hero-actions, .card */
     --spacing-md: 1rem;  /* Usado em: .container, .nav-container, .btn, .ai-input */
@@ -81,7 +81,7 @@
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);  /* Usado em: .card */
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  /* Usado em: .card, .ai-message */
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  /* Usado em: .btn:hover, .card:hover */
-    /* Transições */
+    /* Transitions */
     --transition-fast: 0.15s ease-in-out;  /* Usado em: .logo, .theme-toggle */
     --transition-normal: 0.3s ease-in-out;  /* Usado em: body, .nav-menu a, .btn, .card */
 }
@@ -132,7 +132,7 @@ body {
     padding: 0 var(--spacing-md);
 }
 
-/* ---------------------------------------> Header e Navegação */
+/* ---------------------------------------> Header and Navigation */
 
 .header {
     position: fixed;
@@ -285,7 +285,7 @@ body {
     justify-content: center;
 }
 
-/* Dark mode (padrão) - mostra sol */
+/* Dark mode (default) - shows sun */
 .theme-icon--sun {
     opacity: 1;
     transform: rotate(0deg) scale(1);
@@ -555,7 +555,7 @@ section {
     animation-delay: -2.5s;
 }
 
-/* Animação de flutuação */
+/* Float animation */
 @keyframes float {
     0%, 100% {
         transform: translateY(0px) rotate(0deg);
@@ -619,7 +619,7 @@ section {
     color: #f05032;
 }
 
-/* Garantir que o conteúdo fique acima dos ícones */
+/* Ensure content stays above icons */
 .about .container {
     position: relative;
     z-index: 2;
@@ -707,7 +707,7 @@ section {
 }
 
 
-/* Estilo para o placeholder (aparece apenas se não houver imagem) */
+/* Placeholder style (appears only if no image) */
 .project-placeholder {
     font-size: var(--font-size-lg);
     font-weight: 600;
