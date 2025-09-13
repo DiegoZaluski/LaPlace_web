@@ -1,11 +1,6 @@
 import Paper from './Paper.js';
-// tasks  📝
-// keep code clean and organized
-// add comments to make it easier to understand in the future
-// change comments to english to standardize language
-// resolve performance issues 
 
-//write diagram the flow of the code🗺️
+//write diagram the flow of the code
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get('mode') || 'downloads'; 
 
@@ -16,15 +11,15 @@ if (!container) {
 
 container.innerHTML = '<p>Loading model information...</p>';
 
-//split to another file😕
-function initApp() {// function to initialize the application
+//split to another file
+function initApp() { // function to initialize the application
     const paper = new Paper(container);
-    document.addEventListener('i18n:ready',(e) => onI18nReady(e, paper)); // changed to not be called immediately 
+    document.addEventListener('i18n:ready',(e) => onI18nReady(e, paper)); // changed to not be called immediately
     let modelsProcessed = false; // variable to check if models were processed
     
     if (window.i18n) {     
-        if (window.i18n?.translations?.models) {// check if models were loaded 
-            modelsProcessed = processModels(window.i18n.translations.models, paper);// pass to processModels🦖🍃
+        if (window.i18n?.translations?.models) { // check if models were loaded
+            modelsProcessed = processModels(window.i18n.translations.models, paper); // pass to processModels
         } else {
             if (typeof window.i18n.look === 'function') {
                 window.i18n.look();
@@ -94,13 +89,9 @@ function processModels(models, paper) {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------->2
-// reduce IFs 🫨😕
+// reduce IFs
 function tryLoadModelsDirectly(forceReload = false, paper) {
-    console.log('[bio.js] Trying to load models directly...');
-
     if (window.i18n) {
-        console.log('[bio.js] i18n available in window object');
-
         if (window.i18n.translations && window.i18n.translations.models) {
             console.log('[bio.js] Models found directly in i18n:', window.i18n.translations.models);
             return processModels(window.i18n.translations.models, paper);
@@ -165,6 +156,3 @@ if (document.readyState === 'loading') {
 } else {
     initApp();
 }
-
-
-// note: always verify all points are reconnected correctly

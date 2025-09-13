@@ -1,14 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 // ----------------> i18n 
     i18n.updatePage();//➕➕➕
-
 // ----------------> example of dynamic update 
-    const updateGreeting = (name) => {
-        const greetingElement = document.getElementById('greeting');
-        if (greetingElement) {
-            greetingElement.textContent = i18n.t('greeting', {nome: name || 'Visitante'});
-        }
-    };
 });
 // -------------------------------------> events button
 const languageDropdown = document.querySelector('.language-dropdown');

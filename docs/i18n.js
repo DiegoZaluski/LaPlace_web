@@ -9,7 +9,7 @@ class I18n {
         
         // Extract base locale (pt-BR → pt, en-US → en)
         this.locale = detectedLocale.split('-')[0] || 'en';
- //(navigator.languages && navigator.languages[0]) ? avoid errors in old browsers🤓
+ //(navigator.languages && navigator.languages[0]) ? avoid errors in old browsers
         this.translations = {}; 
         this.fallbackLocale = 'en'; 
         this.loadTranslations();
@@ -143,8 +143,8 @@ class I18n {
             }          
             element.getAttributeNames().forEach(attr => {
                 if (attr.startsWith('data-i18n-') && attr !== 'data-i18n') {
-                    const attrName = attr.replace('data-i18n-', '');//remove data-i18n ex assim: title
-                    element.setAttribute(attrName, this.t(element.getAttribute(attr)));//😵‍💫 stopped here
+                    const attrName = attr.replace('data-i18n-', '');//remove data-i18n prefix: title
+                    element.setAttribute(attrName, this.t(element.getAttribute(attr)));
                 }
             });
         });
@@ -155,7 +155,7 @@ class I18n {
             data = new Date(data); 
         }
         if (!(data instanceof Date) || isNaN(data)) {
-            console.warn('[i18n] Err format date'); // warn a error not critical, does not interrupt the code
+            console.warn('[i18n] Err format date'); // warn an error not critical, does not interrupt the code
             return String(data);// returns the date as string     
         }
 

@@ -102,20 +102,20 @@
 <body>
     <div class="container">
         <div class="error-code">404</div>
-        <h1>Página não encontrada</h1>
-        <p>Desculpe, a página que você está procurando não existe ou foi movida.</p>
-        <a href="/" class="btn">Voltar à Página Inicial</a>
+        <h1>Page not found</h1>
+        <p>Sorry, the page you are looking for does not exist or has been moved.</p>
+        <a href="/" class="btn">Back to Home Page</a>
     </div>
     
     <script>
         try {
             sessionStorage.redirect = location.href;
-            // time 5 seconds 🫨⏳
+            // time 5 seconds
             setTimeout(function() {
                 window.location.href = '/';  
             }, 5000);
         } catch(e) {
-            console.error('Erro ao tentar redirecionar:', e);
+            console.error('Error trying to redirect:', e);
         }
     </script>
 </body>

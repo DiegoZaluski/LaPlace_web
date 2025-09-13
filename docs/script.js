@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos do DOM
+    // DOM Elements
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -16,9 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
 // ----------------> function to apply theme
         const applyTheme = (theme) => {
-            document.documentElement.setAttribute('data-theme', theme);
-            updateThemeToggleAriaLabel(theme);
-            localStorage.setItem('portfolio-theme', theme);
+            try {
+                document.documentElement.setAttribute('data-theme', theme);
+                updateThemeToggleAriaLabel(theme);
+                localStorage.setItem('portfolio-theme', theme);
+            } catch (error) {
+                console.error('Error applying theme:', error);
+            }
         };
 
 // ----------------> check if there is a saved theme
@@ -61,20 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('portfolio-theme', newTheme);
         updateThemeToggleAriaLabel(newTheme);
-        
-        // Feedback visual suave
-        document.body.style.transition = 'all 0.3s ease';
-        setTimeout(() => {
-            document.body.style.transition = '';
-        }, 300);
+        try {
+            document.body.classList.add('transition');
+            setTimeout(() => document.body.classList.remove('transition'), 300);
+        } catch (error) {
+            console.error('Error applying theme transition:', error);
+        }
     }
     
 // ----------------> update aria-label of button
     function updateThemeToggleAriaLabel(theme) {
         if (themeToggle) {
             const label = theme === 'dark' 
-                ? 'Alternar para modo claro' 
-                : 'Alternar para modo escuro';
+                ? 'Switch to light mode' 
+                : 'Switch to dark mode';
             themeToggle.setAttribute('aria-label', label);
             themeToggle.setAttribute('title', label);
         }
@@ -91,8 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-// -------------------------------------------------------------------> parallax
-    
+// -------------------------------------------------------------------> parallax ++
+// add controls of error
 // ----------------> variables for parallax control
     let mouseX = 0;
     let mouseY = 0;
@@ -111,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
 // ----------------> calculate displacement with more pronounced movement
             const moveX = (relativeX - 0.5) * intensityX * 40; // Increased from 20 to 40
-            const moveY = (relativeY - 0.5) * intensityY * 30; // Aumentado de 20 para 30
+            const moveY = (relativeY - 0.5) * intensityY * 30; // Increased from 20 to 30
             
 // ----------------> apply transformation with additional rotation based on movement
             const rotateX = (relativeY - 0.5) * 10; // X-axis tilt

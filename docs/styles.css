@@ -1,6 +1,6 @@
-/* colocar um desenho aqui */
+/* place a design here */
 
-/* Reset e Base Styles */
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,32 +8,32 @@
 }
 
 :root {
-    /*Filtro de fundo*/
-    --filter: url('images/6674f0cdb5b7b401612cf065_noise-50.avif'); /* Usado em: body, .hero, section */
-    /* Cores base */
-    --white: #ffffff;  /* Usado em: .ai-message.user */
-    --black: #000000;  /* Usado em: .ai-message.assistant */
-    /* Tons de cinza */
-    --medium-gray: #65676b;  /* Usado em: .nav-menu a, .hero-subtitle */
-    /* Cores principais */
-    --primary: rgb(151, 47, 47);  /* Usado em: .nav-menu a:hover, .btn-primary, .highlight */
-    --primary-light: rgb(170, 60, 60);  /* Usado em: .btn-primary:hover, .btn-secondary:hover */
-    /* Cores de texto */
-    --text-primary: #151517;  /* Usado em: .hamburger, .nav-menu a footer */
-    --text-secondary: #65676b;  /* Usado em: .hero-subtitle, .nav-menu a */
-    --text-on-primary: #ffffff;  /* Usado em: .btn-primary, .btn-secondary:hover */
-    --text-on-dark: #f0f6fc;  /* Usado em: body, .nav-menu a, .hero-title */
+    /*Background filter*/
+    --filter: url('images/6674f0cdb5b7b401612cf065_noise-50.avif'); /* Used in: body, .hero, section */
+    /* Base colors */
+    --white: #ffffff;  /* Used in: .ai-message.user */
+    --black: #000000;  /* Used in: .ai-message.assistant */
+    /* Gray tones */
+    --medium-gray: #65676b;  /* Used in: .nav-menu a, .hero-subtitle */
+    /* Main colors */
+    --primary: rgb(151, 47, 47);  /* Used in: .nav-menu a:hover, .btn-primary, .highlight */
+    --primary-light: rgb(170, 60, 60);  /* Used in: .btn-primary:hover, .btn-secondary:hover */
+    /* Text colors */
+    --text-primary: #151517;  /* Used in: .hamburger, .nav-menu a footer */
+    --text-secondary: #65676b;  /* Used in: .hero-subtitle, .nav-menu a */
+    --text-on-primary: #ffffff;  /* Used in: .btn-primary, .btn-secondary:hover */
+    --text-on-dark: #f0f6fc;  /* Used in: body, .nav-menu a, .hero-title */
     /* Theme colors - Default Dark Mode */
-    --bg-primary: #070B15;  /* Usado em: body, .hero, .btn-primary:hover .contact-link */
-    --bg-secondary: #070B15;  /* Usado em: .theme-toggle:hover, .nav-menu a:hover, .about */
-    --bg-tertiary: #21262d;  /* Usado em: .theme-toggle */
-    --bg-card: #151517;  /* Usado em: header, .card, .ai-message */
-    --text-color-primary: #f0f6fc;  /* Usado em: body, .header-icon, .nav-menu */
-    --text-color-secondary: #8b949e;  /* Usado em: .hero-subtitle, .tech-stack */
-    --border-color: #30363d;  /* Usado em: header, .theme-toggle, .card, .ai-input */
-    --shadow-color: rgba(0, 0, 0, 0.3);  /* Usado em: .btn-primary:hover, .card:hover */
-    --accent-color: rgb(151, 47, 47);  /* Usado em: .logo, .btn-primary, .highlight, .nav-menu a:hover */
-    --accent-hover: rgb(131, 25, 25);  /* Usado em: .btn-primary:hover, .btn-secondary:hover .contact-link:hover*/
+    --bg-primary: #070B15;  /* Used in: body, .hero, .btn-primary:hover .contact-link */
+    --bg-secondary: #070B15;  /* Used in: .theme-toggle:hover, .nav-menu a:hover, .about */
+    --bg-tertiary: #21262d;  /* Used in: .theme-toggle */
+    --bg-card: #151517;  /* Used in: header, .card, .ai-message */
+    --text-color-primary: #f0f6fc;  /* Used in: body, .header-icon, .nav-menu */
+    --text-color-secondary: #8b949e;  /* Used in: .hero-subtitle, .tech-stack */
+    --border-color: #30363d;  /* Used in: header, .theme-toggle, .card, .ai-input */
+    --shadow-color: rgba(0, 0, 0, 0.3);  /* Used in: .btn-primary:hover, .card:hover */
+    --accent-color: rgb(151, 47, 47);  /* Used in: .logo, .btn-primary, .highlight, .nav-menu a:hover */
+    --accent-hover: rgb(131, 25, 25);  /* Used in: .btn-primary:hover, .btn-secondary:hover .contact-link:hover*/
 }
 
 /* Light mode */
@@ -45,11 +45,12 @@
     --bg-input: #ffffff;
     --text-color-primary: #1c1e21;
     --text-color-secondary: #65676b;
-    --border-color: #dadde1;
+
     --shadow-color: rgba(0, 0, 0, 0.1);
     --accent-color: rgb(151, 47, 47);
     --accent-hover: rgb(131, 25, 25);
     --bg-input:#070B15;
+    --white: #151517a1;
 }
 
 :root {
