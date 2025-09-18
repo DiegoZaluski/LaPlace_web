@@ -22,7 +22,7 @@ class I18n {
         });
     }
 //-----------------------------------------------------------------------------------☕
-    look() {
+    look() { // review ➕➕
         if (!this.translations || !this.translations.models) return console.warn('this.translations: not found:', this.translations);
 //🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙
         if (this.copy !== this.locale) {

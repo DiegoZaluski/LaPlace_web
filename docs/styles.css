@@ -83,8 +83,8 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  /* Usado em: .card, .ai-message */
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  /* Usado em: .btn:hover, .card:hover */
     /* Transitions */
-    --transition-fast: 0.15s ease-in-out;  /* Usado em: .logo, .theme-toggle */
-    --transition-normal: 0.3s ease-in-out;  /* Usado em: body, .nav-menu a, .btn, .card */
+    --transition-fast: 0.3s ease-in-out;  /* Usado em: .logo, .theme-toggle */
+    --transition-normal: 0.15s ease-in-out;  /* Usado em: body, .nav-menu a, .btn, .card */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -508,7 +508,7 @@ section {
 }
 
 /* ---------------------------> Positions Icons */
-.tech-icon--python {
+/* .tech-icon--python {
     top: 15%;
     left: 10%;
     animation-delay: 0s;
@@ -518,21 +518,57 @@ section {
     top: 25%;
     right: 15%;
     animation-delay: -1s;
-}
+} 
 
 .tech-icon--react {
     top: 60%;
     left: 5%;
     animation-delay: -2s;
-}
+}*/
 
 .tech-icon--assembly {
+    top: 15%;
+    left: 10%;
+    animation-delay: -3s;
+}
+.tech-icon--assembly-1 {
     top: 70%;
     right: 10%;
     animation-delay: -3s;
+ 
+}
+.tech-icon--assembly-2 {
+    top: 25%;
+    right: 15%;
+    animation-delay: -3s;
+}
+.tech-icon--assembly-3 {
+    top: 60%;
+    left: 5%;
+    animation-delay: -3s;
+}
+.tech-icon--assembly-4 {
+    top: 40%;
+    left: 20%;
+    animation-delay: -3s;
+}
+.tech-icon--assembly-5 {
+    top: 80%;
+    left: 30%;
+    animation-delay: -3s;
+}
+.tech-icon--assembly-6 {
+    top: 20%;
+    right: 40%;
+    animation-delay: -3s;
+}
+.tech-icon--assembly-7 {
+    top: 50%;
+    right: 25%;
+    animation-delay: -3s;
 }
 
-.tech-icon--html {
+/* .tech-icon--html {
     top: 40%;
     left: 20%;
     animation-delay: -4s;
@@ -554,7 +590,7 @@ section {
     top: 50%;
     right: 25%;
     animation-delay: -2.5s;
-}
+} */
 
 /* Float animation */
 @keyframes float {
@@ -588,7 +624,7 @@ section {
 }
 
 /* ---------------------------> colors for icons */
-.tech-icon--python {
+/* .tech-icon--python {
     color: #3776ab;
 }
 
@@ -598,13 +634,13 @@ section {
 
 .tech-icon--react {
     color: #61dafb;
-}
+} */
 
 .tech-icon--assembly {
     color: var(--accent-color);
 }
 
-.tech-icon--html {
+/* .tech-icon--html {
     color: #e34f26;
 }
 
@@ -618,7 +654,7 @@ section {
 
 .tech-icon--git {
     color: #f05032;
-}
+} */
 
 /* Ensure content stays above icons */
 .about .container {
@@ -769,6 +805,7 @@ section {
 }
 .container {
     text-align: center;
+    transition: all var(--transition-normal);
 }
 .contact-content {
     text-align: center;

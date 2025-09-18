@@ -65,15 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('portfolio-theme', newTheme);
         updateThemeToggleAriaLabel(newTheme);
-        try {
-            document.body.classList.add('transition');
-            setTimeout(() => document.body.classList.remove('transition'), 300);
-        } catch (error) {
-            console.error('Error applying theme transition:', error);
-        }
+// ----------------> smooth transition
+        document.body.classList.add('transition');
+        setTimeout(() => document.body.classList.remove('transition'), 300);
+// ----------------> smooth transition
+        console.error('Error applying theme transition:', error);
+// ----------------> smooth transition
     }
-    
-// ----------------> update aria-label of button
+
+// ----------> update aria-label of button
     function updateThemeToggleAriaLabel(theme) {
         if (themeToggle) {
             const label = theme === 'dark' 
@@ -348,9 +348,13 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
+                    try {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    } catch (error) {
+                        console.error('Error loading image:', error);
+                    }
                 }
             });
         });
