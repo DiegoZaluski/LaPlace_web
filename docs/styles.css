@@ -24,14 +24,14 @@
     --text-on-primary: #ffffff;  /* Used in: .btn-primary, .btn-secondary:hover */
     --text-on-dark: #f0f6fc;  /* Used in: body, .nav-menu a, .hero-title */
     /* Theme colors - Default Dark Mode */
-    --bg-primary: #070B15;  /* Used in: body, .hero, .btn-primary:hover .contact-link */
-    --bg-secondary: #070B15;  /* Used in: .theme-toggle:hover, .nav-menu a:hover, .about */
+    --bg-primary: #151517;  /* Used in: body, .hero, .btn-primary:hover .contact-link */
+    --bg-secondary: #151517;  /* Used in: .theme-toggle:hover, .nav-menu a:hover, .about */
     --bg-tertiary: #21262d;  /* Used in: .theme-toggle */
     --bg-card: #151517;  /* Used in: header, .card, .ai-message */
     --text-color-primary: #f0f6fc;  /* Used in: body, .header-icon, .nav-menu */
     --text-color-secondary: #8b949e;  /* Used in: .hero-subtitle, .tech-stack */
     --border-color: #30363d;  /* Used in: header, .theme-toggle, .card, .ai-input */
-    --shadow-color: rgba(0, 0, 0, 0.3);  /* Used in: .btn-primary:hover, .card:hover */
+    --shadow-color: #151517;  /* Used in: .btn-primary:hover, .card:hover */
     --accent-color: rgb(151, 47, 47);  /* Used in: .logo, .btn-primary, .highlight, .nav-menu a:hover */
     --accent-hover: rgb(131, 25, 25);  /* Used in: .btn-primary:hover, .btn-secondary:hover .contact-link:hover*/
 }
@@ -140,8 +140,11 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    background-image: var(--filter);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: 200px 200px;
     background-color: var(--bg-card);
-    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -794,7 +797,7 @@ section {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(151, 47, 47, 0.2);
 }
-/* ---------------------------------------------> Contact Section */
+/*-----------------------------------------*/
 .contact {
     position: relative;
     overflow: hidden;  
@@ -819,7 +822,26 @@ section {
     margin-bottom: var(--spacing-2xl);
 }
 
+/* ---------------------------------------------> Footer*/
+.footer {
+    height: auto;
+    background-image: var(--filter);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    background-color: var(--text-primary);
+    color: var(--white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--medium-gray);
+    font-size: var(--font-size-sm);
+}
+/* ---------------------------------------------> Contact Section */
 .contact-links {
+    margin-top: var(--spacing-lg);
     display: flex;
     justify-content: center;
     gap: var(--spacing-lg);
@@ -850,18 +872,6 @@ section {
 
 .contact-icon {
     font-size: var(--font-size-2xl);
-}
-/* ---------------------------------------------> Footer*/
-.footer {
-    background-color: var(--text-primary);
-    color: var(--white);
-    padding: var(--spacing-xl) 0;
-    text-align: center;
-}
-
-.footer-text {
-    color: var(--medium-gray);
-    font-size: var(--font-size-sm);
 }
 @keyframes fadeInUp {
     from {
