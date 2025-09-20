@@ -1,9 +1,11 @@
 :root {
-    --color-slogan:white;
+    --color-slogan: #F5F5DC;
 }
+
 [data-theme="light"] {
     --color-slogan: black;
 }
+
 .msg {
     display: inline-block;
     color: var(--color-slogan);
@@ -13,20 +15,29 @@
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: mark .5s step-end infinite, write 6s steps(40, end) infinite;
+    animation: mark .8s step-end infinite, write 6s steps(40, end) infinite;
     position: absolute;
     top: 15%;
-    transform: translateX(-50%);
     left: 50%;
-    
+    transform: translateX(-50%);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    animation-delay: 0.5s;
 }
+
 @keyframes mark {
+    0%, 100% {
+        border-right-color: rgb(131, 25, 25);
+    }
     50% {
         border-right-color: transparent;
     }
 }
 
 @keyframes write {
+    0% {
+        width: 0;
+    }
     20% {
         width: 40.5ch;
     }
@@ -34,16 +45,38 @@
         width: 40.5ch;
     }
     85% {
-        width: 0%;
+        width: 0;
     }
     100% {
-        width: 0%;
+        width: 0;
     }
 }
-@media(max-width: 700px) {
+
+@media (max-width: 700px) {
     .msg {
         font-size: 1.1rem;
-        width: 0;
-        
+        animation: mark .8s step-end infinite, write 5s steps(40, end) infinite;
+        top: 10%;
     }
+
+    @keyframes write {
+        0% {
+            width: 0;
+        }
+        20% {
+            width: 38ch;
+        }
+        70% {
+            width: 38ch;
+        }
+        85% {
+            width: 0;
+        }
+        100% {
+            width: 0;
+        }
+    }
+}
+.msg {
+    transition: color 0.3s ease;
 }

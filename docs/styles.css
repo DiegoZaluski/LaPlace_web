@@ -21,13 +21,14 @@
     /* Text colors */
     --text-primary: #151517;  /* Used in: .hamburger, .nav-menu a footer */
     --text-secondary: #65676b;  /* Used in: .hero-subtitle, .nav-menu a */
-    --text-on-primary: #ffffff;  /* Used in: .btn-primary, .btn-secondary:hover */
+    --text-on-primary: #F5F5DC;  /* Used in: .btn-primary, .btn-secondary:hover */
     --text-on-dark: #f0f6fc;  /* Used in: body, .nav-menu a, .hero-title */
     /* Theme colors - Default Dark Mode */
     --bg-primary: #151517;  /* Used in: body, .hero, .btn-primary:hover .contact-link */
     --bg-secondary: #151517;  /* Used in: .theme-toggle:hover, .nav-menu a:hover, .about */
     --bg-tertiary: #21262d;  /* Used in: .theme-toggle */
-    --bg-card: #151517;  /* Used in: header, .card, .ai-message */
+    --bg-card: #151517;
+    --bg-menu: #000000d2;  /* Used in: .nav-menu */
     --text-color-primary: #f0f6fc;  /* Used in: body, .header-icon, .nav-menu */
     --text-color-secondary: #8b949e;  /* Used in: .hero-subtitle, .tech-stack */
     --border-color: #30363d;  /* Used in: header, .theme-toggle, .card, .ai-input */
@@ -320,6 +321,7 @@ body {
     padding: var(--spacing-sm);
     gap: 4px;
     filter: invert(1);/*force white color*/
+    z-index: 10;
 }
 
 .hamburger {
@@ -902,10 +904,10 @@ section {
     
     .nav-menu {
         position: fixed;
-        top: 64px;
+        top: 0px;
         left: 0;
         right: 0;
-        background-color: var(--bg-card);
+        background-color: var(--bg-menu);/*here*/
         flex-direction: column;
         padding: var(--spacing-lg);
         box-shadow: var(--shadow-lg);
