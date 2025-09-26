@@ -39,11 +39,11 @@
 
 /* Light mode */
 [data-theme="light"] {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f0f2f5;
-    --bg-tertiary: #e4e6ea;
-    --bg-card: #ffffff;
-    --bg-input: #ffffff;
+    --bg-primary: #F5F5DC;
+    --bg-secondary: #F5F5DC;
+    --bg-tertiary: #F5F5DC;
+    --bg-card: #F5F5DC;
+    --bg-input: #F5F5DC;
     --text-color-primary: #1c1e21;
     --text-color-secondary: #65676b;
 

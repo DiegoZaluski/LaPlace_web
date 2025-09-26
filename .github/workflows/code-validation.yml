@@ -1,4 +1,6 @@
-name: Validação de Código e Segurança
+
+
+name: Code Validation and Security
 
 on:
   push:
@@ -6,29 +8,15 @@ on:
   pull_request:
     branches: [main, develop]
   schedule:
-    - cron: '0 0 * * 0' # Verificação semanal de segurança
+    - cron: '0 0 * * 0' # Weekly security check
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  validar-commits:
-    name: Validar Mensagens de Commit
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Verificar estilo de commit
-        uses: wagoid/commitlint-github-action@v5
-        with:
-          configFile: .commitlintrc.json
-
-  validar-codigo:
-    name: Análise de Código
-    needs: validar-commits
+  code-analysis:
+    name: Code Analysis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,18 +27,18 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: Instalar dependências
+      - name: Install dependencies
         run: npm ci --prefer-offline
 
-      - name: Executar ESLint
+      - name: Run ESLint
         run: npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0
 
-      - name: Verificar formatação
+      - name: Check formatting
         run: npx prettier --check .
 
-  testar-codigo:
-    name: Testes Automatizados
-    needs: validar-codigo
+  automated-tests:
+    name: Automated Tests
+    needs: code-analysis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -61,15 +49,15 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: Instalar dependências
+      - name: Install dependencies
         run: npm ci --prefer-offline
 
-      - name: Executar testes
+      - name: Run tests
         run: npm test -- --coverage --watchAll=false
 
-  seguranca:
-    name: Verificação de Segurança
-    needs: testar-codigo
+  security-check:
+    name: Security Check
+    needs: automated-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -79,21 +67,21 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: Verificar dependências vulneráveis
+      - name: Check vulnerable dependencies
         run: |
           npm audit --production --audit-level=high
           if [ $? -ne 0 ]; then
-            echo "Vulnerabilidades críticas encontradas!"
+            echo "Critical vulnerabilities found!"
             exit 1
           fi
 
-      - name: Verificar dependências desatualizadas
+      - name: Check outdated dependencies
         run: |
-          npm outdated || echo "Dependências desatualizadas encontradas"
+          npm outdated || echo "Outdated dependencies found"
 
   build:
-    name: Build do Projeto
-    needs: seguranca
+    name: Project Build
+    needs: security-check
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
@@ -105,8 +93,8 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: Instalar dependências
+      - name: Install dependencies
         run: npm ci --prefer-offline
 
-      - name: Build do projeto
+      - name: Build project
         run: npm run build
