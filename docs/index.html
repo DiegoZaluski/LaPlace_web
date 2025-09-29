@@ -15,14 +15,24 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="LaPlace - Orquestrador de IA">
+    
     <title>LaPlace</title>
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="132x132" href="images/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for technology icons -->
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css" id="delayed-css" disabled>
 </head>
 <body>  
@@ -30,6 +40,7 @@
     <header class="header" role="banner">
         <nav class="nav" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
+                <!-- Language Selector -->
                 <div class="language-dropdown">
                     <button class="header-icon language-toggle" aria-label="Change language" title="Change language">
                         <span class="language-symbol">Aあ</span>
@@ -46,27 +57,36 @@
                     <button class="language-buttons" data-language="ar">AR</button>
                     <button class="language-buttons" data-language="hi">HI</button>
                 </div>
+                
+                <!-- Logo -->
                 <a id="logo" href="#home" class="logo" aria-label="Home">
                     <span class="logo-text">LaPlace</span>
                 </a>
                 
+                <!-- Mobile Menu Toggle -->
                 <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
                 </button>
                 
+                <!-- Navigation Menu -->
                 <ul class="nav-menu" role="menubar">
-                    <!-- analyze menu options if need to add more -->
                     <li role="none">
                         <button class="theme-toggle" aria-label="Toggle theme" title="Toggle between light and dark mode">
                             <span class="theme-icon theme-icon--sun">☀️</span>
                             <span class="theme-icon theme-icon--moon">🌙</span>
                         </button>
                     </li>
-                    <li role="none"><a class="nav-menu-item" href="#home" role="menuitem" data-i18n="home">redes</a></li>
-                    <li role="none"><a class="nav-menu-item" href="#about" role="menuitem" data-i18n="about">download</a></li>
-                    <li role="none"><a class="nav-menu-item" href="#contact" role="menuitem" data-i18n="contact">Documentação</a></li>
+                    <li role="none">
+                        <a class="nav-menu-item" href="#home" role="menuitem" data-i18n="home">redes</a>
+                    </li>
+                    <li role="none">
+                        <a class="nav-menu-item" href="#about" role="menuitem" data-i18n="about">download</a>
+                    </li>
+                    <li role="none">
+                        <a class="nav-menu-item" href="#contact" role="menuitem" data-i18n="contact">Documentação</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -95,8 +115,8 @@
 
         <!-- About Section -->
         <section id="about" class="about" aria-labelledby="about-title">
-            <!-- Animated technology icons in background -->
-            <div class="tech-icons-background">
+            <!-- Animated Technology Icons Background -->
+            <div class="tech-icons-background" aria-hidden="true">
                 <i class="fas fa-microchip tech-icon tech-icon--assembly" data-tech="assembly"></i>
                 <i class="fas fa-microchip tech-icon tech-icon--assembly-1" data-tech="assembly"></i>
                 <i class="fas fa-microchip tech-icon tech-icon--assembly-2" data-tech="assembly"></i>
@@ -122,43 +142,51 @@
                     <div class="skills">
                         <h3 class="skills-title" data-i18n="technologies">Informações</h3>
                         <ul class="skills-list">
-                            <li id="llama.cpp" class="skill-item"><a class="skill-link" href="./bio.html?mode=Llama.cpp">learn more about Llama.cpp</a></li>
-                            <li id="downloads" class="skill-item"><a class="skill-link" href="./bio.html?mode=downloads">Downloads</a></li>
+                            <li id="llama.cpp" class="skill-item">
+                                <a class="skill-link" href="./bio.html?mode=Llama.cpp">learn more about Llama.cpp</a>
+                            </li>
+                            <li id="downloads" class="skill-item">
+                                <a class="skill-link" href="./bio.html?mode=downloads">Downloads</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- participate -->
+
+        <!-- Contact Section -->
         <section id="contact" class="contact container" aria-labelledby="contact-title">
-                <h2 id="projects-title" class="section-title" data-i18n="find-out-more">Descubra o Projeto</h2>
-                <p class="contact-description" data-i18n="projecto-bjective">LaPlace é um projeto para tornar ferramentas de IA mais acessíveis para quem trabalha com segurança digital,<br> reunindo funcionalidades úteis em uma única ferramenta de terminal.</p>
-                <h2 id="contact-title" class="section-title" data-i18n="contact">Contato</h2>
-                <div class="contact-content">
-                    <p class="contact-description" data-i18n="contact-description">
-                        Se você é desenvolvedor ou trabalha com cybersecurity, sua contribuição é bem-vinda neste projeto.
-                    </p>
-               
-                </div>  
+            <h2 id="projects-title" class="section-title" data-i18n="find-out-more">Descubra o Projeto</h2>
+            <p class="contact-description" data-i18n="projecto-bjective">
+                LaPlace é um projeto para tornar ferramentas de IA mais acessíveis para quem trabalha com segurança digital,<br> reunindo funcionalidades úteis em uma única ferramenta de terminal.
+            </p>
+            
+            <h2 id="contact-title" class="section-title" data-i18n="contact">Contato</h2>
+            <div class="contact-content">
+                <p class="contact-description" data-i18n="contact-description">
+                    Se você é desenvolvedor ou trabalha com cybersecurity, sua contribuição é bem-vinda neste projeto.
+                </p>
+            </div>  
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
-             <div class="contact-links">
-                        <a href="mailto:zaluski.developer@gmail.com" class="contact-link" aria-label="Enviar email">
-                            <span class="contact-icon"><i class="fas fa-envelope"></i></span><!--create an email for the project-->
-                            Email
-                        </a>
-                        <a href="https://github.com/DiegoZaluski" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil no GitHub">
-                            <span class="contact-icon"><i class="fab fa-github"></i></span>
-                            GitHub
-                        </a>
-                        <a href="#" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn"> <!--create instagram profile for the project-->
-                            <span class="contact-icon"><i class="fab fa-instagram"></i></span>
-                            Instagram
-                        </a>
-                    </div>
+        <div class="contact-links">
+            <a href="mailto:zaluski.developer@gmail.com" class="contact-link" aria-label="Enviar email">
+                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                Email
+            </a>
+            <a href="https://github.com/DiegoZaluski" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil no GitHub">
+                <span class="contact-icon"><i class="fab fa-github"></i></span>
+                GitHub
+            </a>
+            <a href="#" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn">
+                <span class="contact-icon"><i class="fab fa-instagram"></i></span>
+                Instagram
+            </a>
+        </div>
+        
         <div class="container">
             <p class="footer-text" data-i18n="footer-text">
                 © 2025 LaPlace - IA local para Pentest
@@ -172,7 +200,7 @@
     <script src="app.js" defer></script>
     <script src="script.js" defer></script>
     <script> 
-        // delay animation
+        // Delay animation loading for performance
         setTimeout(() => {
             document.getElementById('delayed-css').disabled = false;
         }, 10); 
