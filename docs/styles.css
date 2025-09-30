@@ -37,7 +37,7 @@
     --accent-hover: rgb(131, 25, 25);  /* Used in: .btn-primary:hover, .btn-secondary:hover .contact-link:hover*/
 }
 
-/* Light mode */
+/*Light mode*/
 [data-theme="light"] {
     --bg-primary: #F5F5DC;
     --bg-secondary: #F5F5DC;
@@ -55,37 +55,37 @@
 }
 
 :root {
-    /* Tipografia */
-    --font-family: 'Playfair Display', serif;  /* Usado em: body */
-    --font-size-xs: 0.75rem;  /* Usado em: .tech-stack, .ai-message-time */
-    --font-size-sm: 0.875rem;  /* Usado em: .nav-menu a, .hero-subtitle, .card-text */
-    --font-size-base: 1rem;  /* Usado em: body, .btn, .ai-input */
-    --font-size-lg: 1.125rem;  /* Usado em: .hero-subtitle, .section-text, .card-title */
-    --font-size-xl: 1.25rem;  /* Usado em: .logo, .section-title, .btn */
-    --font-size-2xl: 1.5rem;  /* Usado em: .hero-title, .section-title */
-    --font-size-3xl: 1.875rem;  /* Usado em: .section-title */
-    --font-size-4xl: 2.25rem;  /* Usado em: .hero-title */
+    /* Tipography */
+    --font-family: 'Playfair Display', serif;  /* Used in: body */
+    --font-size-xs: 0.75rem;  /* Used in: .tech-stack, .ai-message-time */
+    --font-size-sm: 0.875rem;  /* Used in: .nav-menu a, .hero-subtitle, .card-text */
+    --font-size-base: 1rem;  /* Used in: body, .btn, .ai-input */
+    --font-size-lg: 1.125rem;  /* Used in: .hero-subtitle, .section-text, .card-title */
+    --font-size-xl: 1.25rem;  /* Used in: .logo, .section-title, .btn */
+    --font-size-2xl: 1.5rem;  /* Used in: .hero-title, .section-title */
+    --font-size-3xl: 1.875rem;  /* Used in: .section-title */
+    --font-size-4xl: 2.25rem;  /* Used in: .hero-title */
     
     /* Spacing */
-    --spacing-xs: 0.25rem;  /* Usado em: .tech-stack, .ai-message */
-    --spacing-sm: 0.5rem;  /* Usado em: .nav-menu a, .hero-actions, .card */
-    --spacing-md: 1rem;  /* Usado em: .container, .nav-container, .btn, .ai-input */
-    --spacing-lg: 1.5rem;  /* Usado em: .hero-actions, .card, .tech-stack */
-    --spacing-xl: 1rem;  /* Usado em: .nav-menu, .hero-actions, .card-grid */
-    --spacing-2xl: 3rem;  /* Usado em: .section-title, .hero-subtitle */
-    --spacing-3xl: 4rem;  /* Usado em: section, .hero */
+    --spacing-xs: 0.25rem;  /* Used in: .tech-stack, .ai-message */
+    --spacing-sm: 0.5rem;  /* Used in: .nav-menu a, .hero-actions, .card */
+    --spacing-md: 1rem;  /* Used in: .container, .nav-container, .btn, .ai-input */
+    --spacing-lg: 1.5rem;  /* Used in: .hero-actions, .card, .tech-stack */
+    --spacing-xl: 1rem;  /* Used in: .nav-menu, .hero-actions, .card-grid */
+    --spacing-2xl: 3rem;  /* Used in: .section-title, .hero-subtitle */
+    --spacing-3xl: 4rem;  /* Used in: section, .hero */
     /* Bordas */
-    --border-radius-sm: 0.375rem;  /* Usado em: .tech-stack-item, .ai-message */
-    --border-radius-md: 0.5rem;  /* Usado em: .nav-menu a, .card, .ai-input */
-    --border-radius-lg: 0.75rem;  /* Usado em: .btn, .card, .ai-message */
-    --border-radius-xl: 1rem;  /* Usado em: .card */
+    --border-radius-sm: 0.375rem;  /* Used in: .tech-stack-item, .ai-message */
+    --border-radius-md: 0.5rem;  /* Used in: .nav-menu a, .card, .ai-input */
+    --border-radius-lg: 0.75rem;  /* Used in: .btn, .card, .ai-message */
+    --border-radius-xl: 1rem;  /* Used in: .card */
     /* Sombras */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);  /* Usado em: .card */
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  /* Usado em: .card, .ai-message */
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  /* Usado em: .btn:hover, .card:hover */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);  /* Used in: .card */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  /* Used in: .card, .ai-message */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  /* Used in: .btn:hover, .card:hover */
     /* Transitions */
-    --transition-fast: 0.3s ease-in-out;  /* Usado em: .logo, .theme-toggle */
-    --transition-normal: 0.15s ease-in-out;  /* Usado em: body, .nav-menu a, .btn, .card */
+    --transition-fast: 0.3s ease-in-out;  /* Used in: .logo, .theme-toggle */
+    --transition-normal: 0.15s ease-in-out;  /* Used in: body, .nav-menu a, .btn, .card */
     /* Font-family */
 }
 
@@ -115,7 +115,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
-/* ---------------------------> Screen Reader Only */
+/*SCREEN READER ONLY */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -135,7 +135,7 @@ body {
     padding: 0 var(--spacing-md);
 }
 
-/* ---------------------------------------> Header and Navigation */
+/*HEADER AND NAVIGATION */
 
 .header {
     position: fixed;
@@ -175,7 +175,7 @@ body {
     left: 50%;
     transform: translateX(-70%);
 }
-/* Header Actions */
+/* HEADER ACTIONS */
 .language-dropdown {
     outline: 1px solid var(--accent-hover);
     border-radius: 50%;
@@ -244,7 +244,7 @@ body {
     outline: 1px solid var(--accent-hover)
 }
 
-/* ---------------------------> Language Symbol */
+/* LANGUAGE SYMBOL */
 .language-symbol {
     display: block;
     font-size: 1.1em;
@@ -255,7 +255,7 @@ body {
 #logo {
     margin-left: clamp(0.5rem, 2vw, 2rem);  
 }
-/* ---------------------------> Theme Toggle Button */
+/* THEME TOGGLE BUTTON */
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -291,7 +291,7 @@ body {
     justify-content: center;
 }
 
-/* Dark mode (default) - shows sun */
+/* DARK MODE */
 .theme-icon--sun {
     opacity: 1;
     transform: rotate(0deg) scale(1);
@@ -302,7 +302,7 @@ body {
     transform: rotate(180deg) scale(0.5);
 }
 
-/* Light mode - mostra lua */
+/* LIGHT MODE */
 [data-theme="light"] .theme-icon--sun {
     opacity: 0;
     transform: rotate(-180deg) scale(0.5);
@@ -321,7 +321,7 @@ body {
     cursor: pointer;
     padding: var(--spacing-sm);
     gap: 4px;
-    filter: invert(1);/*force white color*/
+    filter: invert(1);/*FORCE WHITE COLOR*/
     z-index: 10;
 }
 
@@ -363,13 +363,12 @@ body {
     padding: var(--spacing-xl);
 }
 
-/* ---------------------------> Main Content */
-
+/* MAIN CONTENT */
 .main {
     margin-top: 64px;
 }
 
-/* ---------------------------> general sections */
+/* GENERAL SECTIONS */
 section {
     padding: var(--spacing-3xl) 0;
     background-image: var(--filter);
@@ -387,8 +386,7 @@ section {
     color: var(--accent-color);
 }
 
-/* ---------------------------> Hero Section */
-
+/* HERO SECTION */
 .hero {
     position: relative;
     overflow: hidden;
@@ -439,7 +437,7 @@ section {
     flex-wrap: wrap;
 }
 
-/* ---------------------------> buttons */
+/* BUTTONS */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -481,15 +479,16 @@ section {
     box-shadow: 0 10px 15px -3px var(--shadow-color);
 }
 
-/* ---------------------------> About Section */
+/* ABOUT SECTION */
 
 .about {
     background-color: var(--bg-secondary);
     position: relative;
     overflow: hidden;
+    transition: all var(--transition-normal);
 }
 
-/* ---------------------------> Tech Icons Background Animation */
+/* TECH ICONS BACKGROUND ANIMATION */
 
 .tech-icons-background {
     position: absolute;
@@ -513,25 +512,7 @@ section {
     z-index: 1;
 }
 
-/* ---------------------------> Positions Icons */
-/* .tech-icon--python {
-    top: 15%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.tech-icon--javascript {
-    top: 25%;
-    right: 15%;
-    animation-delay: -1s;
-} 
-
-.tech-icon--react {
-    top: 60%;
-    left: 5%;
-    animation-delay: -2s;
-}*/
-
+/* TECH ICONS POSITIONS */
 .tech-icon--assembly {
     top: 15%;
     left: 10%;
@@ -573,32 +554,7 @@ section {
     right: 25%;
     animation-delay: -3s;
 }
-
-/* .tech-icon--html {
-    top: 40%;
-    left: 20%;
-    animation-delay: -4s;
-}
-
-.tech-icon--css {
-    top: 80%;
-    left: 30%;
-    animation-delay: -5s;
-}
-
-.tech-icon--node {
-    top: 20%;
-    right: 40%;
-    animation-delay: -1.5s;
-}
-
-.tech-icon--git {
-    top: 50%;
-    right: 25%;
-    animation-delay: -2.5s;
-} */
-
-/* Float animation */
+/*FLOAT ANIMATION */
 @keyframes float {
     0%, 100% {
         transform: translateY(0px) rotate(0deg);
@@ -613,14 +569,14 @@ section {
         transform: translateY(-20px) rotate(2deg);
     }
 }
-/* ---------------------------> hover effect about section */
+/*HOVER EFFECT ABOUT SECTION */
 .about:hover .tech-icon {
     opacity: 0.5; 
     transform: scale(1.1);
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
-/* ---------------------------> hover effect */
+/*HOVER EFFECT */
 .tech-icon:hover {
     opacity: 0.8 !important; 
     transform: scale(1.4) !important; 
@@ -629,40 +585,12 @@ section {
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4);
 }
 
-/* ---------------------------> colors for icons */
-/* .tech-icon--python {
-    color: #3776ab;
-}
-
-.tech-icon--javascript {
-    color: #f7df1e;
-}
-
-.tech-icon--react {
-    color: #61dafb;
-} */
-
+/*COLORS FOR ICONS */
 .tech-icon--assembly {
     color: var(--accent-color);
 }
 
-/* .tech-icon--html {
-    color: #e34f26;
-}
-
-.tech-icon--css {
-    color: #1572b6;
-}
-
-.tech-icon--node {
-    color: #339933;
-}
-
-.tech-icon--git {
-    color: #f05032;
-} */
-
-/* Ensure content stays above icons */
+/* ENSURE CONTENT STAYS ABOVE ICONS */
 .about .container {
     position: relative;
     z-index: 2;
@@ -724,11 +652,10 @@ section {
     color: var(--accent-hover);
 }
 
-/* <---------------------------------------------*/
-[data-theme="light"] h3 {  /*cor dos h3 light*/
+[data-theme="light"] h3 { 
     color: black;
 }
-/* ---------------------------------------------> Projects Section */
+/* PROJECTS SECTION */
 
 .projects-grid {
     display: grid;
@@ -750,7 +677,7 @@ section {
 }
 
 
-/* Placeholder style (appears only if no image) */
+/* PLACEHOLDER STYLE (APPEARS ONLY IF NO IMAGE) */
 .project-placeholder {
     font-size: var(--font-size-lg);
     font-weight: 600;
@@ -800,7 +727,7 @@ section {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(151, 47, 47, 0.2);
 }
-/*-----------------------------------------*/
+/* CONTACT SECTION */
 .contact {
     position: relative;
     overflow: hidden;  
@@ -825,7 +752,7 @@ section {
     margin-bottom: var(--spacing-2xl);
 }
 
-/* ---------------------------------------------> Footer*/
+/* FOOTER */
 .footer {
     height: auto;
     background-image: var(--filter);
@@ -842,7 +769,7 @@ section {
     color: var(--medium-gray);
     font-size: var(--font-size-sm);
 }
-/* ---------------------------------------------> Contact Section */
+/* CONTACT LINKS */
 .contact-links {
     margin-top: var(--spacing-lg);
     display: flex;
@@ -895,7 +822,7 @@ section {
     outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
 }
-/* ---------------------------------------------> Responsividade*/
+/* RESPONSIVIDADE */
 
 /* Tablets */
 @media (max-width: 1055px) {
@@ -908,7 +835,7 @@ section {
         top: 0px;
         left: 0;
         right: 0;
-        background-color: var(--bg-menu);/*here*/
+        background-color: var(--bg-menu);
         flex-direction: column;
         padding: var(--spacing-lg);
         box-shadow: var(--shadow-lg);
@@ -1017,7 +944,7 @@ section {
         color: black !important;
     }
 }
-/* ---------------------------> Media Queries for Mobile Devices */
+/* MEDIA QUERIES FOR MOBILE DEVICES */
 @media (max-width: 768px) {
     .header-icon {
         font-size: 1.3rem; 
@@ -1042,7 +969,6 @@ section {
         transform: none; 
     }
 }
-/*❓*/
 @media (max-width: 530px) {
     .skills-list {
         display: grid;
