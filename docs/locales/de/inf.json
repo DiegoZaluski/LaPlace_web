@@ -1,14 +1,14 @@
 [
-    {
-        "id": "Llama.cpp",
-        "title": "Llama.cpp - Effizientes Inferenz-Framework",
-        "description": "Llama.cpp ist ein in C/C++ geschriebenes Inferenz-Framework für große Sprachmodelle (LLM), das eine effiziente Ausführung auf verschiedener Hardware ermöglicht. Als Teil des GGML-Ökosystems entwickelt, zeichnet es sich durch seine Portabilität und Optimierungen für verschiedene Hardware-Architekturen aus.\n\nDas Framework implementiert eine minimalistische Infrastruktur ohne externe Abhängigkeiten und verwendet ausschließlich natives C/C++. Dieser Ansatz bietet plattformübergreifende Portabilität, optimierte Leistung für jede Architektur, granulare Kontrolle über Ressourcenzuteilung und reduzierte Binärgrößen.\n\nEs implementiert ein fortschrittliches Quantisierungssystem, das mehrere Präzisionen unterstützt: Integer-Quantisierungen von 1,5-Bit bis 8-Bit, adaptive Quantisierungsalgorithmen zur Qualitätserhaltung und hybride Methoden zum Ausgleich von Präzision und Leistung.\n\nUnterstützt mehrere Architekturen: ARM mit NEON-Optimierungen, x86 mit AVX/AVX2/AVX512, GPU-Beschleunigung über CUDA/HIP/Metal/Vulkan und spezialisierte NPUs. Das GGUF-Format bietet effizientes Laden, optimierte Kompression und eigenständige Metadaten.\n\nIdeal für Edge-Computing-Inferenz, Offline-Umgebungen, Anwendungen mit niedriger Latenz und kostenoptimierte Szenarien.",
-        "footer": "Technische Dokumentation basierend auf dem offiziellen GGML-Repository"
-    },
-    {
-        "id": "downloads",
-        "title": "Downloads - LaPlace Attack KI",
-        "description": "**Projekt in Entwicklung**\n\nLaPlace Attack KI ist noch nicht zum Download verfügbar. Dies ist ein experimentelles Projekt, das sich auf die Erstellung eines Pentest-Tools basierend auf Llama.cpp konzentriert.\n\n**Aktueller Status:**\n• Web-Interface: Abgeschlossen\n• Übersetzungssystem: Implementiert\n• Backend: In Entwicklung\n• KI-Modelle: In Entwicklung\n\n**Projektziele:**\n• Pentest-Tool für Linux\n• Port- und Service-Mapping\n• Optimiert für mittlere Hardware\n• Lokale Ausführung ohne Internetabhängigkeit\n\n**Wie Sie beitragen können:**\nDies ist ein Open-Source-Projekt. Wenn Sie sich für KI im Bereich Sicherheit interessieren, ist Ihr Beitrag im GitHub-Repository willkommen.\n\n*Das Projekt befindet sich in der frühen Entwicklungsphase.*",
-        "footer": "© 2025 LaPlace - Lokale KI für Pentest"
-    }
+  {
+    "id": "Llama.cpp",
+    "title": "Llama.cpp - Effizientes Inferenz-Framework",
+    "description": "Llama.cpp ist ein in C/C++ geschriebenes Inferenz-Framework für große Sprachmodelle (LLM), das eine effiziente Ausführung auf verschiedener Hardware ermöglicht. Als Teil des GGML-Ökosystems entwickelt, zeichnet es sich durch seine Portabilität und Optimierungen für verschiedene Hardware-Architekturen aus.\n\nDas Framework implementiert eine minimalistische Infrastruktur ohne externe Abhängigkeiten und verwendet ausschließlich natives C/C++. Dieser Ansatz bietet plattformübergreifende Portabilität, optimierte Leistung für jede Architektur, granulare Kontrolle über Ressourcenzuteilung und reduzierte Binärgrößen.\n\nEs implementiert ein fortschrittliches Quantisierungssystem, das mehrere Präzisionen unterstützt: Integer-Quantisierungen von 1,5-Bit bis 8-Bit, adaptive Quantisierungsalgorithmen zur Qualitätserhaltung und hybride Methoden zum Ausgleich von Präzision und Leistung.\n\nUnterstützt mehrere Architekturen: ARM mit NEON-Optimierungen, x86 mit AVX/AVX2/AVX512, GPU-Beschleunigung über CUDA/HIP/Metal/Vulkan und spezialisierte NPUs. Das GGUF-Format bietet effizientes Laden, optimierte Kompression und eigenständige Metadaten.\n\nIdeal für Edge-Computing-Inferenz, Offline-Umgebungen, Anwendungen mit niedriger Latenz und kostenoptimierte Szenarien.",
+    "footer": "Technische Dokumentation basierend auf dem offiziellen GGML-Repository"
+  },
+  {
+    "id": "downloads",
+    "title": "Downloads - LaPlace Attack KI",
+    "description": "**Projekt in Entwicklung**\n\nLaPlace Attack KI ist noch nicht zum Download verfügbar. Dies ist ein experimentelles Projekt, das sich auf die Erstellung eines Pentest-Tools basierend auf Llama.cpp konzentriert.\n\n**Aktueller Status:**\n• Web-Interface: Abgeschlossen\n• Übersetzungssystem: Implementiert\n• Backend: In Entwicklung\n• KI-Modelle: In Entwicklung\n\n**Projektziele:**\n• Pentest-Tool für Linux\n• Port- und Service-Mapping\n• Optimiert für mittlere Hardware\n• Lokale Ausführung ohne Internetabhängigkeit\n\n**Wie Sie beitragen können:**\nDies ist ein Open-Source-Projekt. Wenn Sie sich für KI im Bereich Sicherheit interessieren, ist Ihr Beitrag im GitHub-Repository willkommen.\n\n*Das Projekt befindet sich in der frühen Entwicklungsphase.*",
+    "footer": "© 2025 LaPlace - Lokale KI für Pentest"
+  }
 ]

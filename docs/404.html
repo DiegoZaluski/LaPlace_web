@@ -1,122 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page not found | LaPlace</title>
     <style>
-        /*add:animation*/
-        :root {
-            --primary-color: rgb(231, 76, 60);
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #201f1f;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-        }
-        
+      /*add:animation*/
+      :root {
+        --primary-color: rgb(231, 76, 60);
+        --text-color: #333;
+        --light-gray: #f5f5f5;
+        --border-radius: 8px;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #201f1f;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 2rem;
+        background: transparent;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+      }
+
+      .error-code {
+        font-size: 6rem;
+        font-weight: bold;
+        color: #e74c3c;
+        margin: 1rem 0;
+        line-height: 1;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        color: #666;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: rgb(235, 69, 51);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        max-width: 200px;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 600px) {
         .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 2rem;
-            background: transparent;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          padding: 1.5rem;
         }
-        
+
         h1 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
+          font-size: 2rem;
         }
-        
+
         .error-code {
-            font-size: 6rem;
-            font-weight: bold;
-            color: #e74c3c;
-            margin: 1rem 0;
-            line-height: 1;
+          font-size: 4rem;
         }
-        
-        p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: rgb(235, 69, 51);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo {
-            max-width: 200px;
-            margin-bottom: 2rem;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 1.5rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .error-code {
-                font-size: 4rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="error-code">404</div>
-        <h1>Page not found</h1>
-        <p>Sorry, the page you are looking for does not exist or has been moved.</p>
-        <a href="/" class="btn">Back to Home Page</a>
+      <div class="error-code">404</div>
+      <h1>Page not found</h1>
+      <p>
+        Sorry, the page you are looking for does not exist or has been moved.
+      </p>
+      <a href="/" class="btn">Back to Home Page</a>
     </div>
-    
+
     <script>
-        try {
-            sessionStorage.redirect = location.href;
-            // time 5 seconds
-            setTimeout(function() {
-                window.location.href = '/';  
-            }, 5000);
-        } catch(e) {
-            console.error('Error trying to redirect:', e);
-        }
+      try {
+        sessionStorage.redirect = location.href;
+        // time 5 seconds
+        setTimeout(function () {
+          window.location.href = "/";
+        }, 5000);
+      } catch (e) {
+        console.error("Error trying to redirect:", e);
+      }
     </script>
-</body>
+  </body>
 </html>
