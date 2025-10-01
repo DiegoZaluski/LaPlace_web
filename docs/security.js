@@ -1,29 +1,39 @@
-function validateParam(param) 
-{ 
-    if (!param || param.length === 0) return false; //not empty
+function validateParam(param) {
+  if (!param || param.length === 0) return false; //not empty
 
-    if (param.length > 50) return false; //max 50
+  if (param.length > 50) return false; //max 50
 
-    if (!/^[a-zA-Z0-9._-]+$/.test(param)) return false; //regex
+  if (!/^[a-zA-Z0-9._-]+$/.test(param)) return false; //regex
 
-    const prohibitedWords = ['script', 'iframe', 'eval', 'alert', 'document', 'window', 'cookie', 'onclick', 'onerror', 'onload'];
-    const inputLower = param.toLowerCase();
-    if (prohibitedWords.some(words => inputLower.includes(words))) return false;
+  const prohibitedWords = [
+    "script",
+    "iframe",
+    "eval",
+    "alert",
+    "document",
+    "window",
+    "cookie",
+    "onclick",
+    "onerror",
+    "onload",
+  ];
+  const inputLower = param.toLowerCase();
+  if (prohibitedWords.some((words) => inputLower.includes(words))) return false;
 
-    return true;
+  return true;
 }
 
 function sanitize(txt) {
-    return txt 
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&apos;");
+  return txt
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }
 
 function blockAccess(reason) {
-    document.body.innerHTML = `
+  document.body.innerHTML = `
       <div style="
         display: flex;
         flex-direction: column;
@@ -118,24 +128,21 @@ function blockAccess(reason) {
         </style>
       </div>
     `;
-    throw new Error(`Access blocked: ${reason}`);
-  }
-
+  throw new Error(`Access blocked: ${reason}`);
+}
 
 // putting everything together
-function getSafeParam(NameParam, valueDefault = "downloads") 
-{
-    const params = new URLSearchParams(window.location.search);
-    const param = params.get(NameParam);
-    
-    const valueFinal = param || valueDefault;
+function getSafeParam(NameParam, valueDefault = "downloads") {
+  const params = new URLSearchParams(window.location.search);
+  const param = params.get(NameParam);
 
-    if (!validateParam(valueFinal)) 
-    {
-        blockAccess("Invalid parameter detected");
-    }
+  const valueFinal = param || valueDefault;
 
-    return sanitize(valueFinal);
+  if (!validateParam(valueFinal)) {
+    blockAccess("Invalid parameter detected");
+  }
+
+  return sanitize(valueFinal);
 }
 
 export { validateParam, sanitize, getSafeParam };
