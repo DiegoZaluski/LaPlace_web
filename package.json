@@ -4,5 +4,9 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "eslint": "^9.36.0"
+  },
+  "scripts": {
+    "test": "echo 'No tests yet'",
+    "lint": "eslint . --ext .js --max-warnings=0"
   }
 }
