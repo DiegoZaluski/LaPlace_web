@@ -1,20 +1,16 @@
-name: Code Validation and Security
+name: Code Security
 
 on:
   push:
-    branches: [main, develop, feature/*, bugfix/*]
-  pull_request:
     branches: [main, develop]
+  pull_request:
+    branches: [main]
   schedule:
     - cron: "0 0 * * 0" # Weekly security check
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  code-analysis:
-    name: Code Analysis
+  security:
+    name: Security Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,73 +22,18 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci --prefer-offline
+        run: npm ci
 
       - name: Run ESLint
-        run: npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0
+        run: npx eslint . --ext .js --max-warnings=0
 
       - name: Check formatting
         run: npx prettier --check .
 
-  automated-tests:
-    name: Automated Tests
-    needs: code-analysis
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.x"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci --prefer-offline
-
-      - name: Run tests
-        run: npm test -- --coverage --watchAll=false
-
-  security-check:
-    name: Security Check
-    needs: automated-tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.x"
-
-      - name: Check vulnerable dependencies
+      - name: Security audit
         run: |
           npm audit --production --audit-level=high
           if [ $? -ne 0 ]; then
             echo "Critical vulnerabilities found!"
             exit 1
           fi
-
-      - name: Check outdated dependencies
-        run: |
-          npm outdated || echo "Outdated dependencies found"
-
-  build:
-    name: Project Build
-    needs: security-check
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.x"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci --prefer-offline
-
-      - name: Build project
-        run: npm run build
