@@ -329,17 +329,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ----------------------------------------------------------------> utils and performance
-    function _debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
 
 // -----------------------> lazy load images
     function lazyLoadImages() {

@@ -107,13 +107,27 @@ body {
     color: var(--text-color-primary);
     position: relative;
     background-color: var(--bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: var(--filter);
     background-attachment: fixed;
     background-repeat: repeat;
     background-size: 200px 200px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color var(--transition-normal), color var(--transition-normal);
+    z-index: -1;
+    opacity: 0.8;
+    will-change: opacity;
+    transition: opacity var(--transition-normal) ease-in-out;
+    pointer-events: none;
 }
 /*SCREEN READER ONLY */
 .sr-only {
@@ -142,14 +156,8 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: var(--filter);
-    background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    background-color: var(--bg-card);
+    background-color: transparent;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     transition: background-color var(--transition-normal), border-color var(--transition-normal);
 }
 
@@ -371,11 +379,9 @@ body {
 /* GENERAL SECTIONS */
 section {
     padding: var(--spacing-3xl) 0;
-    background-image: var(--filter);
-    background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: 200px 200px; 
-    
+    position: relative;
+    z-index: 1;
+    background: transparent;
 }
 
 .section-title {
@@ -390,13 +396,7 @@ section {
 .hero {
     position: relative;
     overflow: hidden;
-    background:var(--filter), 
-    linear-gradient(135deg,
-     var(--bg-secondary) 0%,
-     var(--bg-primary) 100%);   
-    background-repeat: repeat, no-repeat;
-    background-size: 200px 200px, cover;
-    background-attachment: fixed, scroll;
+    z-index: 1;
     padding: var(--spacing-3xl) 0;
     min-height: 80vh;
     display: flex;
@@ -480,16 +480,11 @@ section {
 }
 
 /* ABOUT SECTION */
-
 .about {
-    background-color: var(--bg-secondary);
     position: relative;
     overflow: hidden;
-    transition: all var(--transition-normal);
 }
-
 /* TECH ICONS BACKGROUND ANIMATION */
-
 .tech-icons-background {
     position: absolute;
     top: 0;
@@ -625,7 +620,6 @@ section {
 }
 
 .skill-item {
-    background-color: var(--white);
     padding: var(--spacing-md);
     border-radius: var(--border-radius-md);
     text-align: center;
@@ -730,11 +724,9 @@ section {
 /* CONTACT SECTION */
 .contact {
     position: relative;
-    overflow: hidden;  
-    background-repeat: repeat, no-repeat;
-    background-size: 200px 200px, cover;
-    background-attachment: fixed, scroll;
-    background-color:  var(--bg-primary);
+    overflow: hidden;
+    background-color: transparent;
+    transition: color var(--transition-normal);
 }
 .container {
     text-align: center;
@@ -755,14 +747,30 @@ section {
 /* FOOTER */
 .footer {
     height: auto;
-    background-image: var(--filter);
-    background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: 200px 200px;
+    position: relative;
     background-color: var(--text-primary);
     color: var(--white);
     padding: var(--spacing-xl) 0;
     text-align: center;
+    z-index: 1;
+    overflow: hidden;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--filter);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    z-index: -1;
+    opacity: 0.8;
+    transition: opacity var(--transition-normal);
 }
 
 .footer-text {

@@ -24,7 +24,7 @@ class I18n {
 //-----------------------------------------------------------------------------------☕
     look() { // review ➕➕
         if (!this.translations || !this.translations.models) return console.warn('this.translations: not found:', this.translations);
-//🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙🦙
+//
         if (this.copy !== this.locale) {
             try {
                 const event = new CustomEvent('i18n:ready', {
@@ -35,14 +35,14 @@ class I18n {
                     bubbles: true,
                     cancelable: true
                 });//➕➕🫨
-                
+
                 this.copy = this.locale;
-                const dispatched = document.dispatchEvent(event);//let's go🍃
                 const hasListeners = document.getEventListeners && typeof document.getEventListeners === 'function' && document.getEventListeners('i18n:ready').length > 0;//🫨  
                 // debugger^^^ 
                 if (!hasListeners) {
                     console.warn('[i18n] No listeners registered for event i18n:ready');
                 } 
+                document.dispatchEvent(event);
             } catch (error) {
                 console.error('[i18n] Err dispatching event i18n:ready:', error);
             }
@@ -80,7 +80,7 @@ class I18n {
                 console.error(`[i18n] Err conversion:JSON:`, jsonError);
                 throw new Error(`[i18n] Err processing translation files`);
             }
-//🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃🍃
+//
             
             if (!Array.isArray(models)) {
                 throw new Error(`[i18n] Format inf.json invalid`);
@@ -95,7 +95,7 @@ class I18n {
         } catch (error) {
             console.warn(`[i18n] Err loading ${this.locale}, trying ${this.fallbackLocale}...`, error);
             if (this.locale !== this.fallbackLocale) {
-//---------------------------------------------------->🧐
+//---------------------------------------------------->
                 const originalLocale = this.locale;
                 this.locale = this.fallbackLocale;
                 try { // fallback
