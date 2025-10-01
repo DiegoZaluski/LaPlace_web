@@ -40,16 +40,8 @@
   --text-color-secondary: #8b949e; /* Used in: .hero-subtitle, .tech-stack */
   --border-color: #30363d; /* Used in: header, .theme-toggle, .card, .ai-input */
   --shadow-color: #151517; /* Used in: .btn-primary:hover, .card:hover */
-  --accent-color: rgb(
-    151,
-    47,
-    47
-  ); /* Used in: .logo, .btn-primary, .highlight, .nav-menu a:hover */
-  --accent-hover: rgb(
-    131,
-    25,
-    25
-  ); /* Used in: .btn-primary:hover, .btn-secondary:hover .contact-link:hover*/
+  --accent-color: rgb(151,47,47); /* Used in: .logo, .btn-primary, .highlight, .nav-menu a:hover */
+  --accent-hover: rgb( 131,25,25); /* Used in: .btn-primary:hover, .btn-secondary:hover .contact-link:hover*/ 
 }
 
 /*Light mode*/

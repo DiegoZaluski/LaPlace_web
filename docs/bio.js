@@ -1,8 +1,7 @@
 import Paper from "./Paper.js";
-
+import { getSafeParam, sanitize } from "./security.js";
 //write diagram the flow of the code
-const urlParams = new URLSearchParams(window.location.search);
-const mode = urlParams.get("mode") || "downloads";
+const mode = getSafeParam("mode", "downloads");
 
 const container = document.querySelector(".container");
 if (!container) {
@@ -35,10 +34,10 @@ function initApp() {
       tryLoadModelsDirectly(true, paper).then((success) => {
         if (!success) {
           console.warn("[bio.js] Fallback: Failed to load models directly");
-          container.innerHTML = `
+          container.innerHTML = sanitize(`
                         <p>Could not load model information.</p>
                         <p>Please check your connection and <a href="javascript:window.location.reload()">reload the page</a>.</p>
-                    `;
+                    `);
         }
       });
     }
@@ -66,12 +65,12 @@ function processModels(models, paper) {
 
   if (!model) {
     console.error(`[bio.js] Model with ID "${mode}" not found`);
-    container.innerHTML = `
+    container.innerHTML = sanitize(`
             <p>Model "${mode}" not found. Available models:</p>
             <ul>
-                ${models.map((m) => (m ? `<li><a href="?mode=${m.id}">${m.title || m.id}</a></li>` : "")).join("")}
+                ${models.map((m) => (m ? `<li><a href="?mode=${sanitize(m.id)}">${sanitize(m.title || m.id)}</a></li>` : "")).join("")}
             </ul>
-        `;
+        `);
     return false;
   }
   try {
@@ -143,10 +142,10 @@ function tryLoadModelsDirectly(forceReload = false, paper) {
       return result;
     })
     .catch((error) => {
-      container.innerHTML = `
+      container.innerHTML = sanitize(`
                 <p>Error loading model data.</p>
-                <p>${error.message || "Try reloading the page or check your connection."}</p>
-            `;
+                <p>${sanitize(error.message || "Try reloading the page or check your connection.")}</p>
+            `);
       return false;
     });
 }
