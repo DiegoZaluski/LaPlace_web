@@ -1,0 +1,10 @@
+# Highlight only the main project languages
+*.html linguist-language=HTML
+*.css  linguist-language=CSS
+*.js   linguist-language=JavaScript
+
+# Ignore configs and auxiliary files in language calculation
+dockerfile linguist-vendored
+eslint.config.js linguist-vendored
+package.json linguist-vendored
+package-lock.json linguist-vendored

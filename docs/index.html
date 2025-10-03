@@ -1,28 +1,43 @@
-<!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="LaPlace - Orquestrador de IA para Cybersecurity. Ferramenta especializada em pentest e segurança digital."
+      content="LaPlace - Run multiple open-source AI models locally on your device. A privacy-focused, customizable platform for developers and AI enthusiasts. Supports various models including Llama.cpp, with no internet required after setup. Perfect for secure, offline AI applications."
     />
     <meta name="author" content="LaPlace Team" />
     <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="local AI, open source, artificial intelligence, Llama.cpp, AI models, privacy, pentest, cybersecurity"
+    />
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="LaPlace - Orquestrador de IA" />
+    <meta property="og:title" content="LaPlace - Open Source AI Collection" />
     <meta
       property="og:description"
-      content="Plataforma inteligente para profissionais de cybersecurity e pentest"
+      content="An app that brings multiple AI models together in one place - fast, flexible, and designed to adapt to you. Fully local and open source."
     />
+    <meta property="og:url" content="https://laplace.ai" />
+    <meta property="og:site_name" content="LaPlace" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="LaPlace - Orquestrador de IA" />
+    <meta
+      property="twitter:title"
+      content="LaPlace - Open Source AI Collection"
+    />
+    <meta
+      property="twitter:description"
+      content="Open source app that centralizes different AI models. Local, fast, and completely under your control."
+    />
 
-    <title>LaPlace</title>
+    <title>LaPlace - Open Source AI Collection</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="132x132" href="images/logo.png" />
@@ -74,6 +89,7 @@
             <button class="language-buttons" data-language="zh">ZH</button>
             <button class="language-buttons" data-language="ko">KO</button>
             <button class="language-buttons" data-language="ar">AR</button>
+            <button class="language-buttons" data-language="ru">RU</button>
             <button class="language-buttons" data-language="hi">HI</button>
           </div>
 
@@ -111,7 +127,7 @@
                 href="#home"
                 role="menuitem"
                 data-i18n="home"
-                >redes</a
+                >Home</a
               >
             </li>
             <li role="none">
@@ -120,7 +136,7 @@
                 href="#about"
                 role="menuitem"
                 data-i18n="about"
-                >download</a
+                >Download</a
               >
             </li>
             <li role="none">
@@ -129,7 +145,7 @@
                 href="#contact"
                 role="menuitem"
                 data-i18n="contact"
-                >Documentação</a
+                >Documentation</a
               >
             </li>
           </ul>
@@ -147,24 +163,24 @@
           </div>
           <div class="hero-content">
             <h1 id="hero-title" class="hero-title" data-i18n="hero-title">
-              LaPlace - Attack IA
+              LaPlace - Open Source AI Collection
             </h1>
             <p class="hero-subtitle" data-i18n="hero-subtitle">
-              Uma ferramenta de IA via terminal para auxiliar profissionais de
-              cybersecurity em suas tarefas diárias
+              An app that brings multiple AI models together in one place -
+              fast, flexible, and designed to adapt to you
             </p>
             <div class="hero-actions">
               <a
                 href="#projects"
                 class="btn btn-primary"
                 data-i18n="participate"
-                >Participar</a
+                >Contribute</a
               >
               <a
                 href="https://react-la-place.vercel.app"
                 class="btn btn-secondary"
                 data-i18n="chat"
-                >Chat: entenda melhor o projeto perguntando</a
+                >Chat: discover the project</a
               >
             </div>
           </div>
@@ -215,29 +231,31 @@
             class="section-title"
             data-i18n="about-the-project"
           >
-            Sobre o Projeto
+            About the Project
           </h2>
           <div class="about-content">
             <div class="about-text">
               <p data-i18n="about-text">
-                LaPlace é uma ferramenta que roda no terminal, baseada no modelo
-                Llama.cpp otimizado para funcionar bem em computadores de
-                configuração média. Foi pensada para ajudar profissionais de
-                pentest no mapeamento inicial de sistemas e na execução de
-                comandos auxiliares no Linux.
+                LaPlace is an open source app that brings different artificial
+                intelligence models together in one space. Unlike cloud-based
+                solutions, here you choose what to download, control how to use
+                it, and adapt the app to your workflow. Everything runs locally
+                - fast and with complete control in your hands.
               </p>
               <p data-i18n="about-text-2">
-                O objetivo é simples: automatizar tarefas repetitivas para que
-                você possa focar no que realmente importa - a análise e
-                estratégia de segurança.
+                The key difference is freedom: you can use anything from
+                lightweight models for everyday tasks to more robust options,
+                create your own workspace within the app, and integrate specific
+                workflows like pentesting, development, or creative automation.
+                Simple, practical, and powerful.
               </p>
             </div>
             <div class="skills">
-              <h3 class="skills-title" data-i18n="technologies">Informações</h3>
+              <h3 class="skills-title" data-i18n="technologies">Features</h3>
               <ul class="skills-list">
                 <li id="llama.cpp" class="skill-item">
                   <a class="skill-link" href="./bio.html?mode=Llama.cpp"
-                    >learn more about Llama.cpp</a
+                    >Learn more about Llama.cpp</a
                   >
                 </li>
                 <li id="downloads" class="skill-item">
@@ -258,21 +276,24 @@
         aria-labelledby="contact-title"
       >
         <h2 id="projects-title" class="section-title" data-i18n="find-out-more">
-          Descubra o Projeto
+          Discover the Project
         </h2>
         <p class="contact-description" data-i18n="projecto-bjective">
-          LaPlace é um projeto para tornar ferramentas de IA mais acessíveis
-          para quem trabalha com segurança digital,<br />
-          reunindo funcionalidades úteis em uma única ferramenta de terminal.
+          LaPlace solves a real problem: simple access to different AI models
+          without relying on the internet. More privacy, more speed, and much
+          more control. An app that grows with you - because being open source,
+          it only gets better with time and community contributions. One app,
+          infinite possibilities.
         </p>
 
         <h2 id="contact-title" class="section-title" data-i18n="contact">
-          Contato
+          Documentation
         </h2>
         <div class="contact-content">
           <p class="contact-description" data-i18n="contact-description">
-            Se você é desenvolvedor ou trabalha com cybersecurity, sua
-            contribuição é bem-vinda neste projeto.
+            Whether you're a developer, researcher, security professional, or
+            just someone curious about AI, LaPlace was made for everyone. Open,
+            collaborative, and always evolving.
           </p>
         </div>
       </section>
@@ -284,7 +305,7 @@
         <a
           href="mailto:zaluski.developer@gmail.com"
           class="contact-link"
-          aria-label="Enviar email"
+          aria-label="Send email"
         >
           <span class="contact-icon"><i class="fas fa-envelope"></i></span>
           Email
@@ -294,7 +315,7 @@
           class="contact-link"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Perfil no GitHub"
+          aria-label="GitHub profile"
         >
           <span class="contact-icon"><i class="fab fa-github"></i></span>
           GitHub
@@ -304,7 +325,7 @@
           class="contact-link"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Perfil no LinkedIn"
+          aria-label="Instagram profile"
         >
           <span class="contact-icon"><i class="fab fa-instagram"></i></span>
           Instagram
@@ -313,7 +334,7 @@
 
       <div class="container">
         <p class="footer-text" data-i18n="footer-text">
-          © 2025 LaPlace - IA local para Pentest
+          ™ 2025 LaPlace™ - A new way to use local AI
         </p>
       </div>
     </footer>
