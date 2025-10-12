@@ -817,7 +817,6 @@ section {
   border-radius: var(--border-radius-xl);
   text-decoration: none;
   color: var(--bg-primary);
-  box-shadow: 3px 3px 3px 3px rgba(255, 255, 255, 0.048);
   transition: all var(--transition-normal);
   min-width: 120px;
 }
