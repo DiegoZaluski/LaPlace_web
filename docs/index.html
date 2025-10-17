@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="LaPlace - Run multiple open-source AI models locally on your device. A privacy-focused, customizable platform for developers and AI enthusiasts. Supports various models including Llama.cpp, with no internet required after setup. Perfect for secure, offline AI applications."
+      content="Place - Run multiple open-source AI models locally on your device. A privacy-focused, customizable platform for developers and AI enthusiasts. Supports various models including Llama.cpp, with no internet required after setup. Perfect for secure, offline AI applications."
     />
-    <meta name="author" content="LaPlace Team" />
+    <meta name="author" content="Place Team" />
     <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="LaPlace - Open Source AI Collection" />
+    <meta property="og:title" content="Place - Open Source AI Collection" />
     <meta
       property="og:description"
       content="An app that brings multiple AI models together in one place - fast, flexible, and designed to adapt to you. Fully local and open source."
@@ -37,10 +37,10 @@
       content="Open source app that centralizes different AI models. Local, fast, and completely under your control."
     />
 
-    <title>LaPlace - Open Source AI Collection</title>
+    <title>Place - Open Source AI Collection</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="132x132" href="images/logo.png" />
+    <link rel="icon" type="image/png" sizes="132x132" href="images/logo_web.png" />
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,12 +64,24 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="animations.css" id="delayed-css" disabled />
+    <link rel="stylesheet" href="logobox.css">
   </head>
   <body>
     <!-- Header Navigation -->
     <header class="header" role="banner">
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
+          <!-- Cube Container -->
+          <div id="cube-container">
+            <div class="isometric-cube">
+              <div class="cube-face face-front"></div>
+              <div class="cube-face face-back"></div>
+              <div class="cube-face face-top"></div>
+              <div class="cube-face face-bottom"></div>
+              <div class="cube-face face-left"></div>
+              <div class="cube-face face-right"></div>
+            </div>
+          </div>
           <!-- Language Selector -->
           <div class="language-dropdown">
             <button
@@ -95,7 +107,7 @@
 
           <!-- Logo -->
           <a id="logo" href="#home" class="logo" aria-label="Home">
-            <span class="logo-text">LaPlace</span>
+            <span class="logo-text">Place</span>
           </a>
 
           <!-- Mobile Menu Toggle -->
@@ -177,7 +189,7 @@
                 >Contribute</a
               >
               <a
-                href="#"
+                href="doc_pag/docs_projt.html"
                 class="btn btn-secondary"
                 data-i18n="chat"
                 >discover the project</a
@@ -253,11 +265,6 @@
             <div class="skills">
               <h3 class="skills-title" data-i18n="technologies">Features</h3>
               <ul class="skills-list">
-                <li id="llama.cpp" class="skill-item">
-                  <a class="skill-link" href="./bio.html?mode=Llama.cpp"
-                    >Learn more about Llama.cpp</a
-                  >
-                </li>
                 <li id="downloads" class="skill-item">
                   <a class="skill-link" href="./bio.html?mode=downloads"
                     >Downloads</a

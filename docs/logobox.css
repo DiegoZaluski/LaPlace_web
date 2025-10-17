@@ -1,0 +1,115 @@
+/* Definições de Cores e Configurações */
+:root {
+    /* Manter cores aqui */
+    --outline-color: #000;
+    --red-primary: tomato;
+    --red-transparent: rgba(255, 99, 71, 0.75);
+    --highlight-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+    
+    /* VARIÁVEL DE TAMANHO: 40px */
+    --cube-size: 40px;
+    --half-size: 20px;
+}
+
+/* Container de Perspectiva */
+#cube-container {
+    margin-top: 10px;
+    perspective: 1000px;
+    /* Remover o 'scale(2)' que estava dobrando o tamanho */
+    transform: scale(1);
+    transform: translateX(-200px);  
+}
+
+/* Elemento 3D Principal */
+.isometric-cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(45deg);
+}
+
+/* Base de Todas as Faces */
+.cube-face {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    box-sizing: border-box;
+    border: 1px solid var(--outline-color);
+    background-color: transparent;
+}
+
+/* Posicionamento das Faces: TUDO MUDOU para 'var(--half-size)' (20px) */
+.face-front  { transform: rotateY(0deg) translateZ(var(--half-size)); }
+.face-back   { transform: rotateY(180deg) translateZ(var(--half-size)); }
+.face-top    { transform: rotateX(90deg) translateZ(var(--half-size)); }
+.face-bottom { transform: rotateX(-90deg) translateZ(var(--half-size)); }
+.face-left   { transform: rotateY(-90deg) translateZ(var(--half-size)); }
+.face-right  { transform: rotateY(90deg) translateZ(var(--half-size)); }
+
+/* Aplicação de Cores */
+.face-right {
+    background-color: var(--red-primary);
+}
+
+.face-top {
+    background: var(--red-transparent);
+}
+
+/* Face Frontal com o Recorte Triangular (Clip-Path) */
+.face-front {
+    /* Manteremos o clip-path original, pois usa porcentagens e se adapta ao novo tamanho */
+    clip-path: polygon(
+        50% 0%,    
+        100% 0%,   
+        100% 100%, 
+        50% 100%,  
+        50% 50%,
+        75% 25%, 
+        75% 75%
+    );
+}
+
+/* ANIMAÇÕES PARA O CUBO */
+/* ANIMAÇÕES CORRIGIDAS - LOOP PERFEITO */
+@keyframes rotateCubeContinuous {
+    0% { transform: rotateX(-30deg) rotateY(45deg); }
+    25% { transform: rotateX(30deg) rotateY(135deg); }
+    50% { transform: rotateX(90deg) rotateY(225deg); }
+    75% { transform: rotateX(150deg) rotateY(315deg); }
+    100% { transform: rotateX(210deg) rotateY(405deg); } /* Y: 405° = 45° + 360° */
+}
+
+@keyframes rotateCubeOrbital {
+    0% { transform: rotateX(-30deg) rotateY(45deg); }
+    33% { transform: rotateX(60deg) rotateY(165deg); }
+    66% { transform: rotateX(120deg) rotateY(285deg); }
+    100% { transform: rotateX(210deg) rotateY(405deg); }
+}
+
+@keyframes rotateCubeSmooth {
+    0% { transform: rotateX(-30deg) rotateY(45deg); }
+    100% { transform: rotateX(330deg) rotateY(765deg); } /* X: 330° = -30° + 360°, Y: 765° = 45° + 720° */
+}
+
+/* Aplicando a animação corrigida */
+.isometric-cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(45deg);
+    
+    /* Animação suave e contínua - SEM SALTO */
+    animation: rotateCubeSmooth 12s linear infinite;
+}
+
+/* Versão alternativa mais dinâmica */
+.isometric-cube.alternate-style {
+    animation: rotateCubeContinuous 8s ease-in-out infinite;
+}
+
+/* Versão orbital mais complexa */
+.isometric-cube.orbital-style {
+    animation: rotateCubeOrbital 10s ease-in-out infinite;
+}

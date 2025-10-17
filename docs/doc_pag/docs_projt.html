@@ -1,11 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document project</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Place - Project Documentation. Comprehensive guide to using and contributing to the Place project." />
+    <title>Place - Project Documentation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="132x132" href="../images/logo_web.png" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="docs_projt.css">
 </head>
 <body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div id="cube-container">
+                <div class="isometric-cube">
+                    <div class="cube-face face-front"></div>
+                    <div class="cube-face face-back"></div>
+                    <div class="cube-face face-top"></div>
+                    <div class="cube-face face-bottom"></div>
+                    <div class="cube-face face-left"></div>
+                    <div class="cube-face face-right"></div>
+                </div>
+            </div>
+            <h1 class="sidebar-title">Place Docs</h1>
+        </div>
+        
+        <div class="sidebar-section">
+            <h2 class="sidebar-section-title">Getting Started</h2>
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item"><a href="#introduction" class="sidebar-nav-link active">Introduction</a></li>
+                <li class="sidebar-nav-item"><a href="#installation" class="sidebar-nav-link">Installation</a></li>
+                <li class="sidebar-nav-item"><a href="#configuration" class="sidebar-nav-link">Configuration</a></li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-section">
+            <h2 class="sidebar-section-title">Guides</h2>
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item"><a href="#models" class="sidebar-nav-link">AI Models</a></li>
+                <li class="sidebar-nav-item"><a href="#api" class="sidebar-nav-link">API Reference</a></li>
+                <li class="sidebar-nav-item"><a href="#troubleshooting" class="sidebar-nav-link">Troubleshooting</a></li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-section">
+            <h2 class="sidebar-section-title">Advanced</h2>
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item"><a href="#customization" class="sidebar-nav-link">Customization</a></li>
+                <li class="sidebar-nav-item"><a href="#deployment" class="sidebar-nav-link">Deployment</a></li>
+                <li class="sidebar-nav-item"><a href="#contributing" class="sidebar-nav-link">Contributing</a></li>
+            </ul>
+        </div>
+    </aside>
     
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="docs-header">
+            <h1>Documentation</h1>
+            <button class="theme-toggle" aria-label="Toggle theme" title="Toggle between light and dark mode">
+                <span class="theme-icon theme-icon--sun">☀️</span>
+                <span class="theme-icon theme-icon--moon">🌙</span>
+            </button>
+        </div>
+        
+        <div class="doc-section" id="introduction">
+            <h1>Welcome to Place</h1>
+            <p>Place is an open-source platform that brings multiple AI models together in one place - fast, flexible, and designed to adapt to you. This documentation will help you get started with Place and make the most of its features.</p>
+            
+            <div class="note">
+                <p class="note-title">Note</p>
+                <p>This documentation is a work in progress. Some features might change in future updates.</p>
+            </div>
+            
+            <h2>What is Place?</h2>
+            <p>Place is a privacy-focused platform that allows you to run multiple open-source AI models locally on your device. It's perfect for developers and AI enthusiasts who want to experiment with different models without relying on external services.</p>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Run multiple AI models locally</li>
+                <li>Privacy-focused design</li>
+                <li>Customizable interface</li>
+                <li>Extensible architecture</li>
+                <li>Open source and community-driven</li>
+            </ul>
+        </div>
+        
+        <div class="doc-section" id="installation">
+            <h2>Installation</h2>
+            <p>Follow these steps to install Place on your system:</p>
+            
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Python 3.8 or higher</li>
+                <li>pip (Python package manager)</li>
+                <li>Git</li>
+            </ul>
+            
+            <h3>Installation Steps</h3>
+            <pre><code># Clone the repository
+git clone https://github.com/yourusername/place.git
+
+# Navigate to the project directory
+cd place
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+python app.py</code></pre>
+        </div>
+        
+        <div class="doc-section" id="configuration">
+            <h2>Configuration</h2>
+            <p>Place can be configured using the <code>config.json</code> file in the root directory. Here are the available options:</p>
+            
+            <pre><code>{
+  "theme": "dark",
+  "models_path": "./models",
+  "default_model": "llama-2-7b",
+  "max_tokens": 2048,
+  "temperature": 0.7
+}</code></pre>
+        </div>
+        
+        <div class="doc-section" id="models">
+            <h2>AI Models</h2>
+            <p>Place supports multiple AI models that you can use for different tasks. Here are some of the available models:</p>
+            
+            <h3>Llama 2</h3>
+            <p>Meta's Llama 2 is a collection of pretrained and fine-tuned generative text models.</p>
+            
+            <h3>GPT4All</h3>
+            <p>An ecosystem of open-source chatbots trained on a massive collection of clean assistant data.</p>
+            
+            <h3>Vicuna</h3>
+            <p>An open-source chatbot trained by fine-tuning LLaMA on user-shared conversations.</p>
+        </div>
+    </main>
+    
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <script src="../script.js"></script>
 </body>
 </html>

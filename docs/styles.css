@@ -191,6 +191,10 @@ body::before {
   padding: 0 var(--spacing-md);
   gap: 16px;
 }
+.lg_place {
+  transform: translateX(-200px);
+  opacity: 2;
+}
 
 .logo {
   text-decoration: none;
@@ -632,10 +636,13 @@ section {
 }
 
 .skills-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   gap: var(--spacing-md);
   list-style: none;
+  flex-direction: column;
+  width: 50%;
+  transform: translateX(55%);
+ 
 }
 
 .skill-item {
@@ -877,7 +884,6 @@ section {
     opacity: 1;
     visibility: visible;
   }
-
   .hero-title {
     font-size: var(--font-size-3xl);
   }
@@ -918,8 +924,6 @@ section {
     max-width: 100px;
   }
   .skills-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
   .skill-item {
@@ -998,8 +1002,6 @@ section {
 }
 @media (max-width: 530px) {
   .skills-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
   .skill-item {
