@@ -31,7 +31,7 @@
   --text-on-primary: #f5f5dc; /* Used in: .btn-primary, .btn-secondary:hover */
   --text-on-dark: #f0f6fc; /* Used in: body, .nav-menu a, .hero-title */
   /* Theme colors - Default Dark Mode */
-  --bg-primary: #151517; /* Used in: body, .hero, .btn-primary:hover .contact-link */
+  --bg-primary: black; /* Used in: body, .hero, .btn-primary:hover .contact-link */
   --bg-secondary: #151517; /* Used in: .theme-toggle:hover, .nav-menu a:hover, .about */
   --bg-tertiary: #21262d; /* Used in: .theme-toggle */
   --bg-card: #151517;
@@ -309,8 +309,8 @@ body::before {
 }
 
 .theme-toggle:focus {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: none;
 }
 
 .theme-icon {
@@ -773,7 +773,7 @@ section {
 .footer {
   height: auto;
   position: relative;
-  background-color: var(--text-primary);
+  background-color: var(--bg-primary);
   color: var(--white);
   padding: var(--spacing-xl) 0;
   text-align: center;
