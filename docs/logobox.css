@@ -10,14 +10,16 @@
     --cube-size: 40px;
     --half-size: 20px;
 }
-
+@media (max-width: 800px) {
+    :root {
+        --cube-size: 30px;
+        --half-size: 15px;
+    }
+}
 /* Container de Perspectiva */
 #cube-container {
     margin-top: 10px;
-    perspective: 1000px;
-    /* Remover o 'scale(2)' que estava dobrando o tamanho */
-    transform: scale(1);
-    transform: translateX(-200px);  
+    perspective: 1000px; 
 }
 
 /* Elemento 3D Principal */
