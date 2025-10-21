@@ -589,7 +589,6 @@ section {
   font-size: var(--font-size-lg);
   line-height: 1.7;
 }
-
 .skills-title {
   font-size: var(--font-size-xl);
   font-weight: 600;
@@ -729,7 +728,9 @@ section {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-2xl);
 }
-
+#about-title {
+  transform: translateX(-295px);
+}
 /* FOOTER */
 .footer {
   height: auto;
